@@ -1,82 +1,48 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:telegram_web_app/telegram_web_app.dart';
+import 'package:easy_localization/easy_localization.dart';
+
+import 'animated_tabs.dart';
+import 'main_page.dart';
+import 'library_page.dart';
+import 'translations.dart';
+import 'restart_widget.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+
   try {
     if (TelegramWebApp.instance.isSupported) {
       await TelegramWebApp.instance.ready();
       Future.delayed(const Duration(seconds: 1), TelegramWebApp.instance.expand);
     }
   } catch (e) {
-    print("Error happened in Flutter while loading Telegram $e");
+    if (kDebugMode) {
+      print("Error happened in Flutter while loading Telegram $e");
+    }
     // add delay for 'Telegram not loading sometimes' bug
     await Future.delayed(const Duration(milliseconds: 200));
     main();
     return;
   }
 
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: TelegramThemeUtil.getTheme(TelegramWebApp.instance),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
+  runApp(MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: EasyLocalization(
+          supportedLocales: const [Locale('ru', 'RU')],
+          path: 'ui,cal,reading,library',
+          assetLoader: DirectoryAssetLoader(basePath: "assets/translations"),
+          fallbackLocale: const Locale('ru', 'RU'),
+          startLocale: const Locale('ru', 'RU'),
+          child: RestartWidget(ContainerPage(tabs: [
+            AnimatedTab(icon: const Icon(Icons.home), title: 'homepage', content: MainPage()),
+            AnimatedTab(
+                icon: const ImageIcon(
+                  AssetImage('assets/images/library.png'),
+                ),
+                title: 'library',
+                content: LibraryPage()),
+          ])))));
 }
