@@ -55,10 +55,10 @@ class ContainerPage extends StatefulWidget {
   ContainerPage({required this.tabs, this.highlight = -1});
 
   @override
-  _ContainerPageState createState() => _ContainerPageState();
+  ContainerPageState createState() => ContainerPageState();
 }
 
-class _ContainerPageState extends State<ContainerPage> with TickerProviderStateMixin {
+class ContainerPageState extends State<ContainerPage> with TickerProviderStateMixin {
   int _currentIndex = 0;
   late List<_AnimatedTabView> _navigationViews;
   List<FadeTransition> transitions = [];
@@ -69,17 +69,22 @@ class _ContainerPageState extends State<ContainerPage> with TickerProviderStateM
 
     _navigationViews = widget.tabs.map((t) => _AnimatedTabView(tab: t, vsync: this)).toList();
 
-    for (_AnimatedTabView view in _navigationViews)
+    for (_AnimatedTabView view in _navigationViews) {
       view.controller.addListener(() => setState(() {}));
+    }
 
     _navigationViews[_currentIndex].controller.value = 1.0;
 
-    for (_AnimatedTabView view in _navigationViews) transitions.add(view.transition(context));
+    for (_AnimatedTabView view in _navigationViews) {
+      transitions.add(view.transition(context));
+    }
   }
 
   @override
   void dispose() {
-    for (_AnimatedTabView view in _navigationViews) view.controller.dispose();
+    for (_AnimatedTabView view in _navigationViews) {
+      view.controller.dispose();
+    }
     super.dispose();
   }
 
@@ -123,9 +128,10 @@ class _ContainerPageState extends State<ContainerPage> with TickerProviderStateM
                 items: _navigationViews.map((navigationView) => navigationView.item).toList(),
                 onTap: update));
 
-    return Scaffold(
-        backgroundColor: TelegramWebApp.instance.backgroundColor,
-        body: Center(child: _buildTransitionsStack()),
-        bottomNavigationBar: botNavBar);
+    return SafeArea(
+        child: Scaffold(
+            backgroundColor: TelegramWebApp.instance.backgroundColor,
+            body: Center(child: _buildTransitionsStack()),
+            bottomNavigationBar: botNavBar));
   }
 }

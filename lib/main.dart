@@ -8,10 +8,13 @@ import 'main_page.dart';
 import 'library_page.dart';
 import 'translations.dart';
 import 'restart_widget.dart';
+import 'globals.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+
+  await JSON.load();
 
   try {
     if (TelegramWebApp.instance.isSupported) {
@@ -28,21 +31,19 @@ void main() async {
     return;
   }
 
-  runApp(MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: EasyLocalization(
-          supportedLocales: const [Locale('ru', 'RU')],
-          path: 'ui,cal,reading,library',
-          assetLoader: DirectoryAssetLoader(basePath: "assets/translations"),
-          fallbackLocale: const Locale('ru', 'RU'),
-          startLocale: const Locale('ru', 'RU'),
-          child: RestartWidget(ContainerPage(tabs: [
-            AnimatedTab(icon: const Icon(Icons.home), title: 'homepage', content: MainPage()),
-            AnimatedTab(
-                icon: const ImageIcon(
-                  AssetImage('assets/images/library.png'),
-                ),
-                title: 'library',
-                content: LibraryPage()),
-          ])))));
+  runApp(EasyLocalization(
+      supportedLocales: const [Locale('ru', 'RU')],
+      path: 'ui,cal,reading,library',
+      assetLoader: DirectoryAssetLoader(basePath: "assets/translations"),
+      fallbackLocale: const Locale('ru', 'RU'),
+      startLocale: const Locale('ru', 'RU'),
+      child: RestartWidget(ContainerPage(tabs: [
+        AnimatedTab(icon: const Icon(Icons.home), title: 'homepage', content: MainPage()),
+        AnimatedTab(
+            icon: const ImageIcon(
+              AssetImage('assets/images/library.png'),
+            ),
+            title: 'library',
+            content: LibraryPage()),
+      ]))));
 }
