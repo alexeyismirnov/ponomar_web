@@ -10,11 +10,15 @@ import 'translations.dart';
 import 'restart_widget.dart';
 import 'globals.dart';
 import 'config_param.dart';
+import 'church_fasting.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+
   await ConfigParam.initSharedParams(initFontSize: 22);
+  ConfigParamExt.fastingLevel = ConfigParam<int>('fastingLevel', initValue: 0);
+  ChurchFasting.fastingLevel = FastingLevel.values[ConfigParamExt.fastingLevel.val()];
 
   await JSON.load();
 

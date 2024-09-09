@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 
+import 'package:telegram_web_app/telegram_web_app.dart' as tg;
 import 'package:telegram_web_app/telegram_web_app.dart';
 import 'package:easy_localization/easy_localization.dart' as EL;
+
+import 'calendar_appbar.dart';
+import 'globals.dart';
 
 class AnimatedTab {
   final Widget icon;
@@ -62,6 +66,7 @@ class ContainerPageState extends State<ContainerPage> with TickerProviderStateMi
   int _currentIndex = 0;
   late List<_AnimatedTabView> _navigationViews;
   List<FadeTransition> transitions = [];
+  tg.SettingsButton get settingsButton => TelegramWebApp.instance.settingButton;
 
   @override
   void initState() {
@@ -78,14 +83,21 @@ class ContainerPageState extends State<ContainerPage> with TickerProviderStateMi
     for (_AnimatedTabView view in _navigationViews) {
       transitions.add(view.transition(context));
     }
+
+    settingsButton.show();
+    settingsButton.onClick(showSettings);
   }
 
   @override
   void dispose() {
+    super.dispose();
+
     for (_AnimatedTabView view in _navigationViews) {
       view.controller.dispose();
     }
-    super.dispose();
+
+    settingsButton.hide();
+    settingsButton.offClick(showSettings);
   }
 
   Widget _buildTransitionsStack() {
@@ -133,5 +145,9 @@ class ContainerPageState extends State<ContainerPage> with TickerProviderStateMi
             backgroundColor: TelegramWebApp.instance.backgroundColor,
             body: Center(child: _buildTransitionsStack()),
             bottomNavigationBar: botNavBar));
+  }
+
+  void showSettings() {
+    FastingLevelDialog().show(context);
   }
 }

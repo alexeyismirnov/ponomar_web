@@ -6,6 +6,7 @@ import 'package:sprintf/sprintf.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 import 'dart:convert';
+import 'config_param.dart';
 
 extension LocaleContext on BuildContext {
   String get languageCode => locale.toString().split("_").first;
@@ -92,4 +93,9 @@ extension ShowWidget on Widget {
 
   Future<T?> show<T>(BuildContext context, {canDismiss = true}) =>
       showDialog<T>(barrierDismissible: canDismiss, context: context, builder: (_) => this);
+}
+
+
+extension ConfigParamExt on ConfigParam {
+  static var fastingLevel;
 }
