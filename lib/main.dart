@@ -9,10 +9,12 @@ import 'library_page.dart';
 import 'translations.dart';
 import 'restart_widget.dart';
 import 'globals.dart';
+import 'config_param.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  await ConfigParam.initSharedParams(initFontSize: 22);
 
   await JSON.load();
 

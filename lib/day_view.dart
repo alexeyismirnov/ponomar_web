@@ -6,6 +6,9 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'church_day.dart';
 import 'card_view.dart';
 import 'globals.dart';
+import 'church_calendar.dart';
+import 'church_fasting.dart';
+import 'book_cell.dart';
 
 class _FeastWidget extends StatelessWidget {
   final ChurchDay d;
@@ -64,6 +67,17 @@ class _DayViewState extends State<DayView> {
   DateTime get date => widget.date;
   DateTime get dateOld => widget.dateOld;
 
+  late Cal cal;
+
+  final space10 = const SizedBox(height: 10);
+  final space5 = const SizedBox(height: 5);
+
+  @override
+  void initState() {
+    super.initState();
+    cal = Cal.fromDate(date);
+  }
+
   Widget getDate() {
     final df1 = DateFormat.yMMMMEEEEd(context.languageCode);
     final df2 = DateFormat.yMMMMd(context.languageCode);
@@ -107,6 +121,57 @@ class _DayViewState extends State<DayView> {
     return dateWidget;
   }
 
+  Widget getDescription() {
+    var list = [cal.getWeekDescription(date), cal.getToneDescription(date)];
+    var weekDescr = list.whereType<String>().join('; ');
+    var dayDescr = cal.getDayDescription(date);
+    // var greatFeasts = Cal.getGreatFeast(date);
+
+    List<Widget> feastWidgets = dayDescr.map((d) => _FeastWidget(d)).toList();
+
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: (weekDescr.isNotEmpty
+                ? <Widget>[Text(weekDescr, style: Theme.of(context).textTheme.titleMedium)]
+                : <Widget>[]) +
+            feastWidgets);
+  }
+
+
+  Widget getFasting() => FutureBuilder<FastingModel>(
+      future: ChurchFasting.forDate(date, context.countryCode),
+      builder: (BuildContext context, AsyncSnapshot<FastingModel> snapshot) {
+        if (snapshot.hasData) {
+          final fasting = snapshot.data!;
+
+          List<InlineSpan> spans = [
+            TextSpan(
+                text: "${fasting.description.tr()}  ",
+                style: Theme.of(context).textTheme.titleMedium)
+          ];
+
+          String? comment = JSON.fastingComments[context.countryCode]![fasting.description];
+
+          if (comment != null) {
+            spans.add(const WidgetSpan(
+              child: Icon(Icons.article_outlined, size: 25.0, color: Colors.red),
+            ));
+          }
+
+          return GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: () {
+                if (comment != null) PopupComment(comment).show(context);
+              },
+              child: Row(children: [
+                SvgPicture.asset("assets/images/${fasting.type.icon}", height: 30),
+                const SizedBox(width: 10),
+                Expanded(child: RichText(text: TextSpan(children: spans)))
+              ]));
+        } else {
+          return Container();
+        }
+      });
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -121,6 +186,10 @@ class _DayViewState extends State<DayView> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     getDate(),
+                    space10,
+                    getDescription(),
+                    space10,
+                    getFasting(),
                   ]))
         ]));
   }
