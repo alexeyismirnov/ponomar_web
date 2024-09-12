@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:telegram_web_app/telegram_web_app.dart';
 import 'package:easy_localization/easy_localization.dart';
 
+import 'dart:core';
+import 'dart:io';
+
 import 'animated_tabs.dart';
 import 'main_page.dart';
 import 'library_page.dart';
@@ -12,11 +15,21 @@ import 'globals.dart';
 import 'config_param.dart';
 import 'church_fasting.dart';
 
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback = (X509Certificate cert, String host, int port) => true;
+  }
+}
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await EasyLocalization.ensureInitialized();
+  HttpOverrides.global = MyHttpOverrides();
 
+  await EasyLocalization.ensureInitialized();
   await ConfigParam.initSharedParams(initFontSize: 22);
+
   ConfigParamExt.fastingLevel = ConfigParam<int>('fastingLevel', initValue: 0);
   ChurchFasting.fastingLevel = FastingLevel.values[ConfigParamExt.fastingLevel.val()];
 

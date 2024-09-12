@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'globals.dart';
+import 'saint_model.dart';
 
 part 'church_day.g.dart';
 
@@ -48,6 +49,10 @@ class ChurchDay {
 
   ChurchDay(this.name, this.type, {this.date, this.reading, this.comment});
 
+  ChurchDay.fromSaint(Saint s)
+      : name = s.name,
+        type = s.type;
+
   @override
   String toString() {
     return "name: $name type ${type.name} date ${date ?? ""} reading $reading, comment ${comment ?? ""} \n";
@@ -55,5 +60,3 @@ class ChurchDay {
 }
 
 DateTime? _fromJson(String? date) => JSON.dateParser(date);
-
-typedef Saint = ChurchDay;

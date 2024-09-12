@@ -18,6 +18,8 @@ class DateChangedNotification extends Notification {
   DateChangedNotification(this.newDate) : super();
 }
 
+String hostURL = "https://ponomar-server.lm.r.appspot.com";
+
 class JSON {
   static late String calendar;
   static late String apostle, readingsJohn, gospelMatthew, gospelLuke, readingsLent;

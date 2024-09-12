@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:http/http.dart' as http;
+
+import 'dart:async';
+import 'dart:convert';
 
 import 'church_day.dart';
 import 'card_view.dart';
@@ -9,6 +13,7 @@ import 'globals.dart';
 import 'church_calendar.dart';
 import 'church_fasting.dart';
 import 'book_cell.dart';
+import 'saint_model.dart';
 
 class _FeastWidget extends StatelessWidget {
   final ChurchDay d;
@@ -34,13 +39,18 @@ class _FeastWidget extends StatelessWidget {
           style ?? Theme.of(context).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.w500);
 
       if (d.type.name != "none") {
+        Color signColor = Colors.red;
+        if (d.type == FeastType.noSign || d.type == FeastType.sixVerse) {
+          signColor = Theme.of(context).textTheme.titleMedium!.color!;
+        }
+
         return Padding(
             padding: const EdgeInsets.symmetric(vertical: 1, horizontal: 0),
             child: RichText(
                 text: TextSpan(children: [
               WidgetSpan(
                   child: SvgPicture.asset("assets/images/${d.type.name.toLowerCase()}.svg",
-                      height: 15)),
+                      color: signColor, height: 15)),
               TextSpan(text: translate ? d.name.tr() : d.name, style: textStyle)
             ])));
       } else {
@@ -137,7 +147,6 @@ class _DayViewState extends State<DayView> {
             feastWidgets);
   }
 
-
   Widget getFasting() => FutureBuilder<FastingModel>(
       future: ChurchFasting.forDate(date, context.countryCode),
       builder: (BuildContext context, AsyncSnapshot<FastingModel> snapshot) {
@@ -172,6 +181,43 @@ class _DayViewState extends State<DayView> {
           return Container();
         }
       });
+
+  Future<List<Saint>> fetchSaints(DateTime d) async {
+    final url = "$hostURL/saints/${d.day}/${d.month}/${d.year}";
+
+    try {
+      final r = await http.get(Uri.parse(url));
+
+      if (r.statusCode == 200) {
+        final data = utf8.decode(r.bodyBytes);
+        return (jsonDecode(data) as List<dynamic>).map<Saint>((b) => Saint.fromJson(b)).toList();
+      } else {
+        throw Exception('Failed to load ');
+      }
+    } catch (e) {
+      print(e);
+      return [];
+    }
+  }
+
+  Widget getSaints() => FutureBuilder<List<Saint>>(
+      future: fetchSaints(date),
+      builder: (BuildContext context, AsyncSnapshot<List<Saint>> snapshot) {
+        if (snapshot.hasData) {
+          return CardWithTitle(
+              title: "Memory of saints",
+              content: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: List<Saint>.from(snapshot.data!)
+                      .map((s) => _FeastWidget(ChurchDay.fromSaint(s),
+                          style: Theme.of(context).textTheme.titleMedium, translate: false))
+                      .toList()));
+        } else {
+          return Container();
+        }
+      });
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -190,7 +236,9 @@ class _DayViewState extends State<DayView> {
                     getDescription(),
                     space10,
                     getFasting(),
-                  ]))
+                  ])),
+          space10,
+          getSaints()
         ]));
   }
 }
