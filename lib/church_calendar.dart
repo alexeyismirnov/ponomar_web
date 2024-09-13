@@ -6,6 +6,7 @@ import 'package:easy_localization/easy_localization.dart';
 
 import 'globals.dart';
 import 'church_day.dart';
+import 'extensions.dart';
 
 class ChurchCalendar {
   late int year;

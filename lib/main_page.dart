@@ -3,6 +3,7 @@ import 'package:jiffy/jiffy.dart';
 
 import 'globals.dart';
 import 'day_view.dart';
+import 'extensions.dart';
 
 class MainPage extends StatefulWidget {
   @override

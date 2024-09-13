@@ -6,7 +6,7 @@ import 'package:telegram_web_app/telegram_web_app.dart';
 import 'package:easy_localization/easy_localization.dart' as EL;
 
 import 'calendar_appbar.dart';
-import 'globals.dart';
+import 'extensions.dart';
 
 class AnimatedTab {
   final Widget icon;

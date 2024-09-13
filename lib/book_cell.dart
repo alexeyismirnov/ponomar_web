@@ -7,7 +7,7 @@ import 'package:html/dom.dart' as dom;
 
 import 'book_model.dart';
 import 'config_param.dart';
-import 'globals.dart';
+import 'extensions.dart';
 
 class PopupComment extends StatelessWidget {
   final String text;

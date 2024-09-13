@@ -14,6 +14,8 @@ import 'church_calendar.dart';
 import 'church_fasting.dart';
 import 'book_cell.dart';
 import 'saint_model.dart';
+import 'extensions.dart';
+import 'calendar_selector.dart';
 
 class _FeastWidget extends StatelessWidget {
   final ChurchDay d;
@@ -118,14 +120,11 @@ class _DayViewState extends State<DayView> {
                   ]))
             ]),
         onTap: () {
-          /*
           CalendarSelector(date).show(context).then((newDate) {
             if (newDate != null) {
               DateChangedNotification(newDate).dispatch(context);
             }
           });
-
-           */
         });
 
     return dateWidget;

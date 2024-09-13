@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:supercharged/supercharged.dart';
-import 'dart:ui';
 
 import 'church_calendar.dart';
-import 'globals.dart';
+import 'extensions.dart';
 
 enum FastingLevel { laymen, monastic }
 
