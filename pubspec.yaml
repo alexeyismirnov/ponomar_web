@@ -44,6 +44,7 @@ flutter:
   assets:
     - assets/images/
     - assets/bible/
+    - assets/icons/
     - assets/calendar/
     - assets/translations/ru-RU/
 

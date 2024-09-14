@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 
 import 'dart:async';
 import 'dart:convert';
+import 'dart:math';
 
 import 'church_day.dart';
 import 'card_view.dart';
@@ -14,6 +15,7 @@ import 'church_calendar.dart';
 import 'church_fasting.dart';
 import 'book_cell.dart';
 import 'saint_model.dart';
+import 'icon_model.dart';
 import 'extensions.dart';
 import 'calendar_selector.dart';
 
@@ -81,6 +83,10 @@ class _DayViewState extends State<DayView> {
 
   late Cal cal;
 
+  late List<SaintIcon> icons = [];
+  late int pageSize;
+  final _controller = PageController(initialPage: 0);
+
   final space10 = const SizedBox(height: 10);
   final space5 = const SizedBox(height: 5);
 
@@ -88,6 +94,16 @@ class _DayViewState extends State<DayView> {
   void initState() {
     super.initState();
     cal = Cal.fromDate(date);
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    const itemWidth = 100;
+    const padding = 10;
+
+    pageSize = (MediaQuery.of(context).size.width - 4 * padding) ~/ (itemWidth + 10);
   }
 
   Widget getDate() {
@@ -181,6 +197,58 @@ class _DayViewState extends State<DayView> {
         }
       });
 
+  Widget getIcons() => FutureBuilder<List<SaintIcon>>(
+      future: IconModel.fetch(date),
+      builder: (BuildContext context, AsyncSnapshot<List<SaintIcon>> snapshot) {
+        if (snapshot.hasData) {
+          if (icons.isEmpty) {
+            icons = List<SaintIcon>.from(snapshot.data!);
+          }
+
+          Widget iconPage(int page) {
+            final newItems =
+                icons.sublist(page * pageSize, min((page + 1) * pageSize, icons.length));
+
+            final pageNotFull = page > 0 && (page + 1) * pageSize > icons.length;
+
+            return Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment:
+                    pageNotFull ? MainAxisAlignment.start : MainAxisAlignment.spaceAround,
+                children: [
+                  if (!pageNotFull) ...[const Spacer()],
+                  ...newItems
+                      .map<Widget>((s) => Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 0),
+                          child: GestureDetector(
+                              behavior: HitTestBehavior.opaque,
+                              onTap: () {
+                                if (context.languageCode == 'ru' && s.name.isNotEmpty) {
+                                  PopupComment(s.name).show(context);
+                                }
+                              },
+                              child: Image.asset(
+                                'assets/icons/${s.id}.jpg',
+                                height: 110.0,
+                                fit: BoxFit.contain,
+                              ))))
+                      .toList(),
+                  if (!pageNotFull) ...[const Spacer()],
+                ]);
+          }
+
+          return Container(
+              margin: const EdgeInsets.symmetric(vertical: 20.0),
+              height: 120.0,
+              child: PageView.builder(
+                  controller: _controller,
+                  itemCount: (icons.length - 1) ~/ pageSize + 1,
+                  itemBuilder: (BuildContext context, int index) => iconPage(index)));
+        } else {
+          return Container();
+        }
+      });
+
   Future<List<Saint>> fetchSaints(DateTime d) async {
     final url = "$hostURL/saints/${d.day}/${d.month}/${d.year}";
 
@@ -235,6 +303,8 @@ class _DayViewState extends State<DayView> {
                     getDescription(),
                     space10,
                     getFasting(),
+                    space10,
+                    getIcons()
                   ])),
           space10,
           getSaints()
