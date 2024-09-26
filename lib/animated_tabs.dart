@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 
-import 'package:telegram_web_app/telegram_web_app.dart' as tg;
 import 'package:telegram_web_app/telegram_web_app.dart';
 import 'package:easy_localization/easy_localization.dart' as EL;
 
@@ -66,7 +65,7 @@ class ContainerPageState extends State<ContainerPage> with TickerProviderStateMi
   int _currentIndex = 0;
   late List<_AnimatedTabView> _navigationViews;
   List<FadeTransition> transitions = [];
-  tg.SettingsButton get settingsButton => TelegramWebApp.instance.settingButton;
+  SettingsButton get settingsButton => TelegramWebApp.instance.settingButton;
 
   @override
   void initState() {

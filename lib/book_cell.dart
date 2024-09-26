@@ -61,15 +61,15 @@ class BookCellHTML extends StatelessWidget {
     int fontSize = ConfigParam.fontSize.val().round();
 
     var text = _text;
-    final color2 = Theme.of(context).secondaryHeaderColor.value.toRadixString(16);
+    // final color2 = Theme.of(context).secondaryHeaderColor.value.toRadixString(16);
 
     String css = """
-        <style type='text/css'>
+        <style>
         body {font-size: ${fontSize}px;  }
         a { text-decoration: none; }
         .rubric { color: red; font-size: 90%; }
         .title { font-size: 110%; font-weight:bold; text-align: center  }
-        .subtitle { font-size: 85%;  color: #$color2; margin-top:0px; display:inline-block;  }
+        .subtitle { font-size: 85%; margin-top:0px; display:inline-block;  }
         .refrain { font-style: italic }
         .author { color: red; font-size: 110%; font-weight:bold; }
         </style>

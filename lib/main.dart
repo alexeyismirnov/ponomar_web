@@ -30,6 +30,7 @@ void main() async {
   await EasyLocalization.ensureInitialized();
   await ConfigParam.initSharedParams(initFontSize: 22);
 
+  ConfigParamExt.bookmarks = ConfigParam<List<String>>('bookmarks', initValue: []);
   ConfigParamExt.fastingLevel = ConfigParam<int>('fastingLevel', initValue: 0);
   ChurchFasting.fastingLevel = FastingLevel.values[ConfigParamExt.fastingLevel.val()];
 
@@ -38,6 +39,7 @@ void main() async {
   try {
     if (TelegramWebApp.instance.isSupported) {
       await TelegramWebApp.instance.ready();
+      await TelegramWebApp.instance.disableVerticalSwipes();
       Future.delayed(const Duration(seconds: 1), TelegramWebApp.instance.expand);
     }
   } catch (e) {

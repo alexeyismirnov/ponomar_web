@@ -18,6 +18,8 @@ import 'saint_model.dart';
 import 'icon_model.dart';
 import 'extensions.dart';
 import 'calendar_selector.dart';
+import 'church_reading.dart';
+import 'pericope.dart';
 
 class _FeastWidget extends StatelessWidget {
   final ChurchDay d;
@@ -267,6 +269,23 @@ class _DayViewState extends State<DayView> {
     }
   }
 
+  Widget getReading() {
+    final reading = ChurchReading.forDate(date);
+    List<Widget> content = [];
+
+    for (final r in reading) {
+      content.add(ReadingView(r));
+    }
+
+    return CardWithTitle(
+        title: "Reading of the day",
+        content: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: content));
+  }
+
   Widget getSaints() => FutureBuilder<List<Saint>>(
       future: fetchSaints(date),
       builder: (BuildContext context, AsyncSnapshot<List<Saint>> snapshot) {
@@ -306,6 +325,8 @@ class _DayViewState extends State<DayView> {
                     space10,
                     getIcons()
                   ])),
+          space10,
+          getReading(),
           space10,
           getSaints()
         ]));

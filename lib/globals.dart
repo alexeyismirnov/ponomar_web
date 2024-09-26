@@ -13,6 +13,7 @@ class DateChangedNotification extends Notification {
 
 extension ConfigParamExt on ConfigParam {
   static var fastingLevel;
+  static var bookmarks;
 }
 
 String hostURL = "https://ponomar-server.lm.r.appspot.com";
