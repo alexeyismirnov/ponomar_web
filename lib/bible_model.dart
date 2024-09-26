@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:group_list_view/group_list_view.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:http/http.dart' as http;
 
 import 'dart:async';
 import 'dart:convert';
@@ -20,34 +21,49 @@ class BibleVerse {
   final String text;
 
   BibleVerse(this.verse, this.text);
+
+  BibleVerse.fromJson(Map<String, dynamic> json)
+      : verse = json['verse'],
+        text = "${json['text']}";
+
+  @override
+  String toString() {
+    return "$verse $text";
+  }
 }
 
 class BibleUtil {
   List<BibleVerse> content = [];
   String bookName = "";
-  late String lang;
+  String lang;
 
-  BibleUtil();
-
-  BibleUtil.fromMap(this.bookName, this.lang, List<Map<String, Object?>> data) {
-    for (final Map<String, Object?> d in data) {
-      content.add(BibleVerse(d["verse"] as int, d["text"] as String));
-    }
-  }
+  BibleUtil(this.bookName, this.lang, this.content);
 
   static Future<BibleUtil> fetch(String bookName, String lang, String whereExpr) async {
-    List<Map<String, Object?>> result = [
-      {"verse": 1, "text": whereExpr}
-    ];
-/*
-    var db = await DB.open(bookName + "_$lang.sqlite");
+    final payload = jsonEncode(<String, String>{
+      'lang': lang,
+      'bookName': bookName,
+      'whereExpr': whereExpr,
+    });
 
-    List<Map<String, Object?>> result =
-    await db.query("scripture", columns: ["verse", "text"], where: whereExpr, orderBy: "verse");
+    try {
+      final r = await http.post(Uri.parse('$hostURL/pericope'), body: payload);
 
- */
+      if (r.statusCode == 200) {
+        var data = utf8.decode(r.bodyBytes);
 
-    return BibleUtil.fromMap(bookName, lang, result);
+        final content = (jsonDecode(data) as List<dynamic>)
+            .map<BibleVerse>((b) => BibleVerse.fromJson(b))
+            .toList();
+
+        return BibleUtil(bookName, lang, content);
+      } else {
+        throw("Network error");
+      }
+    } catch (e) {
+      print(e);
+      return BibleUtil(bookName, lang, [BibleVerse(1, e.toString())]);
+    }
   }
 
   String getText() {

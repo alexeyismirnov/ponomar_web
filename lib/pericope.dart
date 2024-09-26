@@ -37,10 +37,10 @@ class _PericopeViewState extends State<PericopeView> {
   @override
   Widget build(BuildContext context) => ready
       ? Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: content)
-      : Container();
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: content)
+      : const Center(child: CircularProgressIndicator());
 }
 
 class ReadingView extends StatefulWidget {
@@ -72,7 +72,5 @@ class _ReadingViewState extends State<ReadingView> {
           title: title,
           subtitle: subtitle,
           onTap: () => BookPageSingle("Reading of the day".tr(),
-              builder: () => PericopeView(
-                  key: UniqueKey(),
-                  currentReading[0])).push(context)));
+              builder: () => PericopeView(key: UniqueKey(), currentReading[0])).push(context)));
 }
