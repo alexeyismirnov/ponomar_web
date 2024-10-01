@@ -10,6 +10,7 @@ import 'dart:convert';
 import 'book_model.dart';
 import 'globals.dart';
 import 'extensions.dart';
+import 'config_param.dart';
 
 class Range {
   final int chapter, verse;
@@ -39,6 +40,8 @@ class BibleUtil {
 
   BibleUtil(this.bookName, this.lang, this.content);
 
+  BibleUtil operator +(BibleUtil other) => BibleUtil(bookName, lang, content + other.content);
+
   static Future<BibleUtil> fetch(String bookName, String lang, String whereExpr) async {
     final payload = jsonEncode(<String, String>{
       'lang': lang,
@@ -58,7 +61,7 @@ class BibleUtil {
 
         return BibleUtil(bookName, lang, content);
       } else {
-        throw("Network error");
+        throw ("Network error");
       }
     } catch (e) {
       print(e);
@@ -71,7 +74,7 @@ class BibleUtil {
   }
 
   List<TextSpan> getTextSpan(BuildContext context) {
-    double fontSize = Theme.of(context).textTheme.bodyLarge!.fontSize!;
+    final fontSize = ConfigParam.fontSize.val();
     String family = Theme.of(context).textTheme.bodyLarge!.fontFamily!;
     List<TextSpan> result = [];
 

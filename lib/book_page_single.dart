@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:telegram_web_app/telegram_web_app.dart';
 
 import 'globals.dart';
-import 'package:telegram_web_app/telegram_web_app.dart';
+import 'font_size_dialog.dart';
+import 'extensions.dart';
+import 'config_param.dart';
 
 typedef WidgetCallback = Widget Function();
 
@@ -69,42 +72,35 @@ class _BookPageSingleState extends State<BookPageSingle> {
             bottom: false,
             child: Scrollbar(
                 controller: _scrollController,
-                child: Container(
-                    height: MediaQuery.of(context).size.height,
-                    child: SafeArea(
-                        bottom: widget.safeBottom,
-                        child: CustomScrollView(
-                            controller: _scrollController,
-                            physics: const ClampingScrollPhysics(),
-                            slivers: [
-                              SliverAppBar(
-                                elevation: 0.0,
-                                floating: true,
-                                toolbarHeight: 50.0,
-                                pinned: false,
-                                actions: widget.showActions
-                                    ? [
-                                        /*
-                                        IconButton(
-                                            icon:
-                                                const Icon(Icons.zoom_in_outlined, size: 30.0),
-                                            onPressed: () => FontSizeDialog()
-                                                .show(context)
-                                                .then((value) => setState(() {}))),
-
-                                       */
-                                        if (bookmarkButton != null) ...[bookmarkButton],
-                                      ]
-                                    : [],
-                                title: Text(widget.title,
-                                    textAlign: TextAlign.left,
-                                    style: Theme.of(context).textTheme.titleLarge),
-                              ),
-                              SliverToBoxAdapter(
-                                  key: UniqueKey(),
-                                  child: Padding(
-                                      padding: EdgeInsets.all(widget.padding),
-                                      child: widget.builder()))
-                            ]))))));
+                child: SafeArea(
+                    bottom: widget.safeBottom,
+                    child: CustomScrollView(
+                        controller: _scrollController,
+                        physics: const ClampingScrollPhysics(),
+                        slivers: [
+                          SliverAppBar(
+                            elevation: 0.0,
+                            floating: true,
+                            toolbarHeight: 50.0,
+                            pinned: false,
+                            actions: widget.showActions
+                                ? [
+                                    IconButton(
+                                        icon: const Icon(Icons.zoom_in_outlined, size: 30.0),
+                                        onPressed: () => FontSizeDialog()
+                                            .show(context)
+                                            .then((value) => setState(() {}))),
+                                    if (bookmarkButton != null) ...[bookmarkButton],
+                                  ]
+                                : [],
+                            title: Text(widget.title,
+                                textAlign: TextAlign.left,
+                                style: Theme.of(context).textTheme.titleLarge),
+                          ),
+                          SliverToBoxAdapter(
+                              key: ValueKey(ConfigParam.fontSize.val()),
+                              child: Padding(
+                                  padding: EdgeInsets.all(widget.padding), child: widget.builder()))
+                        ])))));
   }
 }

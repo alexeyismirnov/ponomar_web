@@ -4,7 +4,7 @@ typedef void SubscriptionHandler<T>(T val);
 
 class ConfigParam<T> {
   static late SharedPreferences prefs;
-  static var fontSize, bgcolor, langSelected;
+  static var fontSize, langSelected;
 
   String prefKey;
 

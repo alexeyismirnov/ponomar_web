@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:ponomar_web/bible_model.dart';
 
 import 'book_page_single.dart';
 import 'globals.dart';
+import 'config_param.dart';
 import 'custom_list_tile.dart';
 import 'pericope_model.dart';
 import 'extensions.dart';
@@ -17,30 +19,50 @@ class PericopeView extends StatefulWidget {
 }
 
 class _PericopeViewState extends State<PericopeView> {
-  bool ready = false;
-  List<Widget> content = [];
-
   @override
-  void didChangeDependencies() async {
-    super.didChangeDependencies();
+  Widget build(BuildContext context) {
+    final fontSize = ConfigParam.fontSize.val();
+    final family = Theme.of(context).textTheme.bodyLarge!.fontFamily!;
 
-    String lang = context.countryCode;
+    return FutureBuilder<List<dynamic>>(
+        future: PericopeModel(context.countryCode, widget.str).getPericope(PericopeFormat.widget),
+        builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
+          if (snapshot.hasError) {
+            return const Center(child: Text("network error"));
+          }
+          if (snapshot.hasData) {
+            List<Widget> content = [];
 
-    final pericope = PericopeModel(lang, widget.str, context);
-    await pericope.initFuture;
+            for (List<dynamic> values in snapshot.data!) {
+              var title = values[0] as String;
+              content.add(Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                        child: RichText(
+                      text: TextSpan(
+                          text: "$title\n",
+                          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                              fontWeight: FontWeight.bold, fontFamily: family, fontSize: fontSize)),
+                      textAlign: TextAlign.center,
+                    ))
+                  ]));
 
-    content = List<Widget>.from(pericope.widgetContent);
+              var bu = values[1] as BibleUtil;
+              content.add(RichText(text: TextSpan(children: bu.getTextSpan(context))));
+            }
 
-    setState(() => ready = true);
+            return SingleChildScrollView(
+                child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: content));
+          } else {
+            return const Center(child: CircularProgressIndicator());
+          }
+        });
   }
-
-  @override
-  Widget build(BuildContext context) => ready
-      ? Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: content)
-      : const Center(child: CircularProgressIndicator());
 }
 
 class ReadingView extends StatefulWidget {
@@ -72,5 +94,5 @@ class _ReadingViewState extends State<ReadingView> {
           title: title,
           subtitle: subtitle,
           onTap: () => BookPageSingle("Reading of the day".tr(),
-              builder: () => PericopeView(key: UniqueKey(), currentReading[0])).push(context)));
+              builder: () => PericopeView(currentReading[0])).push(context)));
 }
