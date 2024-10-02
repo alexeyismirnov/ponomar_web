@@ -20,6 +20,7 @@ import 'extensions.dart';
 import 'calendar_selector.dart';
 import 'church_reading.dart';
 import 'pericope.dart';
+import 'feofan.dart';
 
 class _FeastWidget extends StatelessWidget {
   final ChurchDay d;
@@ -276,6 +277,8 @@ class _DayViewState extends State<DayView> {
     for (final r in reading) {
       content.add(ReadingView(r));
     }
+
+    content.add(FeofanView(date));
 
     return CardWithTitle(
         title: "Reading of the day",
