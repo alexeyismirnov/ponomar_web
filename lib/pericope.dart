@@ -53,11 +53,10 @@ class _PericopeViewState extends State<PericopeView> {
               content.add(RichText(text: TextSpan(children: bu.getTextSpan(context))));
             }
 
-            return SingleChildScrollView(
-                child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: content));
+            return Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: content);
           } else {
             return const Center(child: CircularProgressIndicator());
           }

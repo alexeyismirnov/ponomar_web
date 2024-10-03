@@ -85,8 +85,6 @@ class FeofanViewState extends State<FeofanView> {
   Future<List<Widget>> fetch(BuildContext context) async {
     List<Widget> result = [];
 
-    print("QQQ");
-
     if (date == cal.d("meetingOfLord")) {
       return [getListTile(context, (await getFeofan("33")))];
     } else if (date == DateTime.utc(cal.year, 9, 21) || date == DateTime.utc(cal.year, 10, 14)) {

@@ -21,6 +21,7 @@ import 'calendar_selector.dart';
 import 'church_reading.dart';
 import 'pericope.dart';
 import 'feofan.dart';
+import 'troparion_model.dart';
 
 class _FeastWidget extends StatelessWidget {
   final ChurchDay d;
@@ -279,6 +280,9 @@ class _DayViewState extends State<DayView> {
     }
 
     content.add(FeofanView(date));
+
+    content.add(const SizedBox(height: 5));
+    content.add(SaintTroparion(date));
 
     return CardWithTitle(
         title: "Reading of the day",
