@@ -282,7 +282,7 @@ class _DayViewState extends State<DayView> {
     content.add(FeofanView(date));
 
     content.add(const SizedBox(height: 5));
-    content.add(SaintTroparion(date));
+    content.add(TroparionWidget(date));
 
     return CardWithTitle(
         title: "Reading of the day",
