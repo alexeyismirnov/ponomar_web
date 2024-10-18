@@ -50,7 +50,7 @@ class BibleUtil {
     });
 
     try {
-      final r = await http.post(Uri.parse('$hostURL/pericope'), body: payload);
+      final r = await http.post(Uri.parse('https://$hostURL/pericope'), body: payload);
 
       if (r.statusCode == 200) {
         var data = utf8.decode(r.bodyBytes);
@@ -130,19 +130,21 @@ mixin BibleModel on BookModel {
 
   @override
   Future<int> getNumChapters(IndexPath index) async {
-    return 0;
-    /*
     final bookName = filenames[index.section][index.index];
-    var db = await DB.open("${bookName}_$lang.sqlite");
+    final r = await http.get(Uri(
+        scheme: 'https',
+        host: hostURL,
+        path: "bookchapters",
+        queryParameters: {"bookname": bookName, "lang": lang}));
 
-    int result =
-        Sqflite.firstIntValue(await db.rawQuery('SELECT COUNT(DISTINCT chapter) FROM scripture'))!;
+    int result = 0;
+
+    if (r.statusCode == 200) {
+      result = int.parse(utf8.decode(r.bodyBytes));
+    }
 
     numChaptersCache[index] = result;
-
     return result;
-
-     */
   }
 
   @override

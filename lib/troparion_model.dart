@@ -1,7 +1,6 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 import 'custom_list_tile.dart';
 import 'troparion_view.dart';
@@ -51,7 +50,7 @@ class TroparionWidget extends StatelessWidget {
     if (date.weekday == DateTime.sunday) {
       final tone = cal.getTone(date);
       if (tone != null) {
-        results.addAll(await getData("$hostURL/tropfeast?id=sundayGlas$tone"));
+        results.addAll(await getData("https://$hostURL/tropfeast?id=sundayGlas$tone"));
       }
     }
     return results;
@@ -83,7 +82,7 @@ class TroparionWidget extends StatelessWidget {
     final feasts = triodionFeasts.toSet().intersection(descr.toSet());
 
     for (final feast in feasts) {
-      results.addAll(await getData("$hostURL/tropfeast?id=$feast"));
+      results.addAll(await getData("https://$hostURL/tropfeast?id=$feast"));
     }
 
     return results;
@@ -96,7 +95,7 @@ class TroparionWidget extends StatelessWidget {
     try {
       if (greatFeasts.isNotEmpty) {
         for (final feast in greatFeasts) {
-          results.addAll(await getData("$hostURL/tropfeast?id=${feast.name}"));
+          results.addAll(await getData("https://$hostURL/tropfeast?id=${feast.name}"));
 
           final otherGreatFeasts = [
             "veilOfTheotokos",
@@ -118,7 +117,7 @@ class TroparionWidget extends StatelessWidget {
         results.addAll(await fetchSunday());
         results.addAll(await fetchTriodion());
 
-        final url = "$hostURL/tropsaint/${date.day}/${date.month}/${date.year}";
+        final url = "https://$hostURL/tropsaint/${date.day}/${date.month}/${date.year}";
         results.addAll(await getData(url));
       }
     } catch (e) {

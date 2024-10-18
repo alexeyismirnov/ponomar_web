@@ -53,7 +53,7 @@ class FeofanViewState extends State<FeofanView> {
       'fuzzy': false,
     });
 
-    final r = await http.post(Uri.parse('$hostURL/feofan'), body: payload);
+    final r = await http.post(Uri.parse('https://$hostURL/feofan'), body: payload);
 
     if (r.statusCode == 200) {
       var data = utf8.decode(r.bodyBytes);
@@ -69,7 +69,7 @@ class FeofanViewState extends State<FeofanView> {
       'fuzzy': true,
     });
 
-    final r = await http.post(Uri.parse('$hostURL/feofan'), body: payload);
+    final r = await http.post(Uri.parse('https://$hostURL/feofan'), body: payload);
 
     if (r.statusCode == 200) {
       var data = utf8.decode(r.bodyBytes);

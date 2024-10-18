@@ -56,6 +56,7 @@ class _BookPageSingleState extends State<BookPageSingle> {
   Widget build(BuildContext context) {
     IconButton? bookmarkButton;
 
+    /*
     if (widget.bookmark != null) {
       if (ConfigParamExt.bookmarks.val().contains(widget.bookmark)) {
         bookmarkButton = IconButton(
@@ -65,6 +66,8 @@ class _BookPageSingleState extends State<BookPageSingle> {
             icon: const Icon(Icons.bookmark_outline, size: 30.0), onPressed: () => addBookmark());
       }
     }
+
+     */
 
     return Scaffold(
         backgroundColor: TelegramWebApp.instance.backgroundColor,

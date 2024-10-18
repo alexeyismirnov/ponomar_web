@@ -50,7 +50,7 @@ class IconModel {
       icons.add(SaintIcon(int.parse(icon.name),""));
     }
 
-    final url = "$hostURL/icons/${d.day}/${d.month}/${d.year}";
+    final url = "https://$hostURL/icons/${d.day}/${d.month}/${d.year}";
 
     try {
       final r = await http.get(Uri.parse(url));

@@ -5,10 +5,16 @@ import 'package:flutter/services.dart' show rootBundle;
 
 import 'dart:convert';
 import 'config_param.dart';
+import 'book_model.dart';
 
 class DateChangedNotification extends Notification {
   late DateTime newDate;
   DateChangedNotification(this.newDate) : super();
+}
+
+class BookPositionNotification extends Notification {
+  late BookPosition pos;
+  BookPositionNotification(this.pos) : super();
 }
 
 extension ConfigParamExt on ConfigParam {
@@ -16,7 +22,7 @@ extension ConfigParamExt on ConfigParam {
   static var bookmarks;
 }
 
-String hostURL = "https://ponomar-server.lm.r.appspot.com";
+String hostURL = "ponomar-server.lm.r.appspot.com";
 
 class JSON {
   static late String calendar;
