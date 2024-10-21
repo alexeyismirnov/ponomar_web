@@ -123,7 +123,7 @@ class BibleUtil {
 mixin BibleModel on BookModel {
   List<List<String>> get items;
   List<List<String>> get filenames;
-  Map<IndexPath, int> numChaptersCache = {};
+  Map<String, int> numChaptersCache = {};
 
   @override
   Future prepare() async {}
@@ -143,7 +143,7 @@ mixin BibleModel on BookModel {
       result = int.parse(utf8.decode(r.bodyBytes));
     }
 
-    numChaptersCache[index] = result;
+    numChaptersCache["${index.section}-${index.index}"] = result;
     return result;
   }
 
@@ -188,7 +188,7 @@ mixin BibleModel on BookModel {
   BookPosition? getNextSection(BookPosition pos) {
     final index = pos.index!;
     final chapter = pos.chapter!;
-    final numChapters = numChaptersCache[index] ?? 0;
+    final numChapters = numChaptersCache["${index.section}-${index.index}"] ?? 0;
 
     return (chapter < numChapters - 1)
         ? BookPosition.modelIndex(this, index, chapter: chapter + 1)

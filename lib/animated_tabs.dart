@@ -139,11 +139,12 @@ class ContainerPageState extends State<ContainerPage> with TickerProviderStateMi
                 items: _navigationViews.map((navigationView) => navigationView.item).toList(),
                 onTap: update));
 
-    return SafeArea(
-        child: Scaffold(
-            backgroundColor: TelegramWebApp.instance.backgroundColor,
-            body: Center(child: _buildTransitionsStack()),
-            bottomNavigationBar: botNavBar));
+    return Container(
+        color: TelegramWebApp.instance.backgroundColor,
+        child: SafeArea(
+            minimum: const EdgeInsets.only(bottom: 10),
+            child: Scaffold(
+                body: Center(child: _buildTransitionsStack()), bottomNavigationBar: botNavBar)));
   }
 
   void showSettings() {
