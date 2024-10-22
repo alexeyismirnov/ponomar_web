@@ -91,17 +91,22 @@ class EbookModel extends BookModel {
     } else {
       return "";
     }
-
   }
 
   @override
   Future<String?> getComment(int commentId) async {
-    return "";
-    /*
-    return SqfliteExt.firstStringValue(
-        await db.query("comments", columns: ["text"], where: "id=?", whereArgs: [commentId]));
+    final r =
+        await http.get(Uri(scheme: 'https', host: hostURL, path: "bookcomment", queryParameters: {
+      "filename": filename,
+      "id": "$commentId",
+    }));
 
-     */
+    if (r.statusCode == 200) {
+      var data = utf8.decode(r.bodyBytes);
+      return data;
+    } else {
+      return "";
+    }
   }
 
   @override

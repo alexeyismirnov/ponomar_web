@@ -37,6 +37,12 @@ class LibraryPageState extends State<LibraryPage> {
       EbookModel("prayerbook_ru.sqlite"),
     ]);
 
+    sections.add("Богослужение");
+    books.add([
+      EbookModel("vigil_ru.sqlite"),
+      EbookModel("liturgy_ru.sqlite"),
+    ]);
+
     sections.add("Разное");
     books.add([
       EbookModel("taushev.sqlite"),
