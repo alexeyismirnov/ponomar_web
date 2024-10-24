@@ -9,6 +9,7 @@ import 'config_param.dart';
 import 'custom_list_tile.dart';
 import 'pericope_model.dart';
 import 'extensions.dart';
+import 'clipboard.dart';
 
 class PericopeView extends StatefulWidget {
   final String str;
@@ -50,7 +51,8 @@ class _PericopeViewState extends State<PericopeView> {
                   ]));
 
               var bu = values[1] as BibleUtil;
-              content.add(RichText(text: TextSpan(children: bu.getTextSpan(context))));
+              content.add(CopyToClipboard(bu.getText(),
+                  child: RichText(text: TextSpan(children: bu.getTextSpan(context)))));
             }
 
             return Column(

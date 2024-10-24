@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'troparion_model.dart';
 import 'book_page_single.dart';
 import 'config_param.dart';
+import 'clipboard.dart';
 
 class TroparionView extends StatefulWidget {
   final List<Troparion> troparia;
@@ -47,7 +48,7 @@ class TroparionViewState extends State<TroparionView> {
     ])));
     content.add(const SizedBox(height: 10));
 
-    return Column(children: content);
+    return CopyToClipboard("$title\n\n${t.content}", child: Column(children: content));
   }
 
   Widget getContent() => Column(

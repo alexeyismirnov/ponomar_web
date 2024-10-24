@@ -8,6 +8,7 @@ import 'package:html/dom.dart' as dom;
 import 'book_model.dart';
 import 'config_param.dart';
 import 'extensions.dart';
+import 'clipboard.dart';
 
 class PopupComment extends StatelessWidget {
   final String text;
@@ -39,8 +40,12 @@ class BookCellText extends StatelessWidget {
   const BookCellText(this.text);
 
   @override
-  Widget build(BuildContext context) => Text(text,
-      style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: ConfigParam.fontSize.val()));
+  Widget build(BuildContext context) => CopyToClipboard(text,
+      child: Text(text,
+          style: Theme.of(context)
+              .textTheme
+              .bodyLarge!
+              .copyWith(fontSize: ConfigParam.fontSize.val())));
 }
 
 class BookCellHTML extends StatelessWidget {
