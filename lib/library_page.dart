@@ -46,6 +46,7 @@ class LibraryPageState extends State<LibraryPage> {
     sections.add("Разное");
     books.add([
       EbookModel("taushev.sqlite"),
+      EbookModel("zerna.sqlite"),
     ]);
 
     var futures = <Future>[];

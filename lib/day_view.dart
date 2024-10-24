@@ -22,6 +22,8 @@ import 'church_reading.dart';
 import 'pericope.dart';
 import 'feofan.dart';
 import 'troparion_model.dart';
+import 'taushev.dart';
+import 'zerna.dart';
 
 class _FeastWidget extends StatelessWidget {
   final ChurchDay d;
@@ -280,6 +282,16 @@ class _DayViewState extends State<DayView> {
     }
 
     content.add(FeofanView(date));
+
+    if (date.weekday == DateTime.sunday) {
+      for (final r in reading) {
+        content.add(TaushevView(r));
+      }
+    }
+
+    if (Cal.getGreatFeast(date).isEmpty && date.weekday != DateTime.sunday && reading.length == 1) {
+      content.add(ZernaView(date));
+    }
 
     content.add(const SizedBox(height: 5));
     content.add(TroparionWidget(date));
