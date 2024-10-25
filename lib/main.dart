@@ -14,6 +14,7 @@ import 'restart_widget.dart';
 import 'globals.dart';
 import 'config_param.dart';
 import 'church_fasting.dart';
+import 'church_page.dart';
 
 class MyHttpOverrides extends HttpOverrides {
   @override
@@ -66,5 +67,11 @@ void main() async {
             ),
             title: 'library',
             content: LibraryPage()),
+        AnimatedTab(
+            icon: const ImageIcon(
+              AssetImage('assets/images/cross.png'),
+            ),
+            title: 'about_us',
+            content: ChurchPage()),
       ]))));
 }
