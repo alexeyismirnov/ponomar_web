@@ -44,19 +44,19 @@ class TroparionWidget extends StatelessWidget {
     }
   }
 
-  Future<List<Troparion>> fetchSunday() async {
+  Future<List<Troparion>> fetchSunday(String lang) async {
     List<Troparion> results = [];
 
     if (date.weekday == DateTime.sunday) {
       final tone = cal.getTone(date);
       if (tone != null) {
-        results.addAll(await getData("https://$hostURL/tropfeast?id=sundayGlas$tone"));
+        results.addAll(await getData("https://$hostURL/tropfeast?id=sundayGlas$tone&lang=$lang"));
       }
     }
     return results;
   }
 
-  Future<List<Troparion>> fetchTriodion() async {
+  Future<List<Troparion>> fetchTriodion(String lang) async {
     List<Troparion> results = [];
     final triodionFeasts = [
       "sundayOfPublicianAndPharisee",
@@ -82,20 +82,20 @@ class TroparionWidget extends StatelessWidget {
     final feasts = triodionFeasts.toSet().intersection(descr.toSet());
 
     for (final feast in feasts) {
-      results.addAll(await getData("https://$hostURL/tropfeast?id=$feast"));
+      results.addAll(await getData("https://$hostURL/tropfeast?id=$feast&lang=$lang"));
     }
 
     return results;
   }
 
-  Future<List<Troparion>> fetch() async {
+  Future<List<Troparion>> fetch(String lang) async {
     List<Troparion> results = [];
     var greatFeasts = Cal.getGreatFeast(date);
 
     try {
       if (greatFeasts.isNotEmpty) {
         for (final feast in greatFeasts) {
-          results.addAll(await getData("https://$hostURL/tropfeast?id=${feast.name}"));
+          results.addAll(await getData("https://$hostURL/tropfeast?id=${feast.name}&lang=$lang"));
 
           final otherGreatFeasts = [
             "veilOfTheotokos",
@@ -109,15 +109,15 @@ class TroparionWidget extends StatelessWidget {
           ];
 
           if (otherGreatFeasts.contains(feast.name) && date.weekday == DateTime.sunday) {
-            results.addAll(await fetchSunday());
-            results.addAll(await fetchTriodion());
+            results.addAll(await fetchSunday(lang));
+            results.addAll(await fetchTriodion(lang));
           }
         }
       } else {
-        results.addAll(await fetchSunday());
-        results.addAll(await fetchTriodion());
+        results.addAll(await fetchSunday(lang));
+        results.addAll(await fetchTriodion(lang));
 
-        final url = "https://$hostURL/tropsaint/${date.day}/${date.month}/${date.year}";
+        final url = "https://$hostURL/tropsaint/$lang/${date.day}/${date.month}/${date.year}";
         results.addAll(await getData(url));
       }
     } catch (e) {
@@ -129,7 +129,7 @@ class TroparionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => FutureBuilder<List<Troparion>>(
-      future: fetch(),
+      future: fetch(context.countryCode),
       builder: (BuildContext context, AsyncSnapshot<List<Troparion>> snapshot) {
         if (snapshot.hasData) {
           final troparia = List<Troparion>.from(snapshot.data!);

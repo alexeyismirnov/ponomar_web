@@ -256,7 +256,7 @@ class _DayViewState extends State<DayView> {
       });
 
   Future<List<Saint>> fetchSaints(DateTime d) async {
-    final url = "https://$hostURL/saints/${d.day}/${d.month}/${d.year}";
+    final url = "https://$hostURL/saints/${context.countryCode}/${d.day}/${d.month}/${d.year}";
 
     try {
       final r = await http.get(Uri.parse(url));

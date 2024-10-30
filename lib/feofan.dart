@@ -51,6 +51,7 @@ class FeofanViewState extends State<FeofanView> {
     final payload = jsonEncode(<String, dynamic>{
       'id': id,
       'fuzzy': false,
+      'lang': context.countryCode
     });
 
     final r = await http.post(Uri.parse('https://$hostURL/feofan'), body: payload);
@@ -67,6 +68,8 @@ class FeofanViewState extends State<FeofanView> {
     final payload = jsonEncode(<String, dynamic>{
       'id': id,
       'fuzzy': true,
+      'lang': context.countryCode
+
     });
 
     final r = await http.post(Uri.parse('https://$hostURL/feofan'), body: payload);
