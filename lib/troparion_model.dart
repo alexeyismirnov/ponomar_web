@@ -56,9 +56,9 @@ class TroparionWidget extends StatelessWidget {
     return results;
   }
 
-  Future<List<Troparion>> fetchTriodion(String lang) async {
+  Future<List<Troparion>> fetchFeast(String lang) async {
     List<Troparion> results = [];
-    final triodionFeasts = [
+    var feastsCodes = [
       "sundayOfPublicianAndPharisee",
       "sundayOfProdigalSon",
       "sundayOfDreadJudgement",
@@ -72,14 +72,32 @@ class TroparionWidget extends StatelessWidget {
       "sunday3AfterPascha",
       "sunday4AfterPascha",
       "sunday5AfterPascha",
-      "midPentecost",
       "sunday6AfterPascha",
       "sunday7AfterPascha",
-      "sunday1AfterPentecost"
+      "sunday1AfterPentecost",
+      "holyFathersSixCouncils",
+      "holyFathersSeventhCouncil",
+      "eveOfTheophany",
+      "eveOfNativityOfGod",
+      "saturday1GreatLent",
+      "saturday2GreatLent",
+      "saturday3GreatLent",
+      "saturday4GreatLent",
+      "saturday5GreatLent",
+      "greatMonday",
+      "greatTuesday",
+      "greatWednesday",
+      "greatThursday",
+      "greatFriday",
+      "greatSaturday"
     ];
 
+    if (lang == "ru") {
+      feastsCodes.add("midPentecost");
+    }
+
     final descr = cal.getDayDescription(date).map<String>((f) => f.name);
-    final feasts = triodionFeasts.toSet().intersection(descr.toSet());
+    final feasts = feastsCodes.toSet().intersection(descr.toSet());
 
     for (final feast in feasts) {
       results.addAll(await getData("https://$hostURL/tropfeast?id=$feast&lang=$lang"));
@@ -110,12 +128,12 @@ class TroparionWidget extends StatelessWidget {
 
           if (otherGreatFeasts.contains(feast.name) && date.weekday == DateTime.sunday) {
             results.addAll(await fetchSunday(lang));
-            results.addAll(await fetchTriodion(lang));
+            results.addAll(await fetchFeast(lang));
           }
         }
       } else {
         results.addAll(await fetchSunday(lang));
-        results.addAll(await fetchTriodion(lang));
+        results.addAll(await fetchFeast(lang));
 
         final url = "https://$hostURL/tropsaint/$lang/${date.day}/${date.month}/${date.year}";
         results.addAll(await getData(url));

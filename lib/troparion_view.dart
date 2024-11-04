@@ -46,7 +46,6 @@ class TroparionViewState extends State<TroparionView> {
           text: "${t.content}\n",
           style: Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: fontSize))
     ])));
-    content.add(const SizedBox(height: 10));
 
     return CopyToClipboard("$title\n\n${t.content}", child: Column(children: content));
   }
