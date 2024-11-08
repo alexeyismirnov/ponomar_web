@@ -20,34 +20,35 @@ class LibraryPageState extends State<LibraryPage> {
   bool ready = false;
 
   @override
-  void initState() {
-    super.initState();
-    loadBooks();
-  }
+  void didChangeDependencies() {
+    super.didChangeDependencies();
 
-  loadBooks() {
-    sections.add("Библия");
+    if (ready) return;
+
+    sections.add("Bible");
     books.add([
-      OldTestamentModel("ru"),
-      NewTestamentModel("ru"),
+      OldTestamentModel(context.languageCode),
+      NewTestamentModel(context.languageCode),
     ]);
 
-    sections.add("Молитвослов");
+    sections.add("prayerbook");
     books.add([
-      EbookModel("prayerbook_ru.sqlite"),
+      EbookModel("prayerbook_${context.languageCode}.sqlite"),
     ]);
 
-    sections.add("Богослужение");
+    sections.add("liturgical_books");
     books.add([
-      EbookModel("vigil_ru.sqlite"),
-      EbookModel("liturgy_ru.sqlite"),
+      EbookModel("vigil_${context.languageCode}.sqlite"),
+      EbookModel("liturgy_${context.languageCode}.sqlite"),
     ]);
 
-    sections.add("Разное");
-    books.add([
-      EbookModel("taushev.sqlite"),
-      EbookModel("zerna.sqlite"),
-    ]);
+    if (context.languageCode == "ru") {
+      sections.add("Разное");
+      books.add([
+        EbookModel("taushev.sqlite"),
+        EbookModel("zerna.sqlite"),
+      ]);
+    }
 
     var futures = <Future>[];
     for (final model in books.expand((e) => e)) {

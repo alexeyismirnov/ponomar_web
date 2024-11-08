@@ -18,7 +18,7 @@ class MonthViewCell extends StatelessWidget {
     final today = DateTime.utc(now.year, now.month, now.day);
 
     return FutureBuilder<FastingModel>(
-        future: ChurchFasting.forDate(date, context.countryCode),
+        future: ChurchFasting.forDate(date, context.languageCode),
         builder: (BuildContext context, AsyncSnapshot<FastingModel> snapshot) {
           if (!snapshot.hasData) return Container();
 

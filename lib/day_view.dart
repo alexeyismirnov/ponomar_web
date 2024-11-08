@@ -169,7 +169,7 @@ class _DayViewState extends State<DayView> {
   }
 
   Widget getFasting() => FutureBuilder<FastingModel>(
-      future: ChurchFasting.forDate(date, context.countryCode),
+      future: ChurchFasting.forDate(date, context.languageCode),
       builder: (BuildContext context, AsyncSnapshot<FastingModel> snapshot) {
         if (snapshot.hasData) {
           final fasting = snapshot.data!;
@@ -180,7 +180,7 @@ class _DayViewState extends State<DayView> {
                 style: Theme.of(context).textTheme.titleMedium)
           ];
 
-          String? comment = JSON.fastingComments[context.countryCode]![fasting.description];
+          String? comment = JSON.fastingComments[context.languageCode]![fasting.description];
 
           if (comment != null) {
             spans.add(const WidgetSpan(
@@ -256,7 +256,7 @@ class _DayViewState extends State<DayView> {
       });
 
   Future<List<Saint>> fetchSaints(DateTime d) async {
-    final url = "https://$hostURL/saints/${context.countryCode}/${d.day}/${d.month}/${d.year}";
+    final url = "https://$hostURL/saints/${context.languageCode}/${d.day}/${d.month}/${d.year}";
 
     try {
       final r = await http.get(Uri.parse(url));
@@ -283,14 +283,18 @@ class _DayViewState extends State<DayView> {
 
     content.add(FeofanView(date));
 
-    if (date.weekday == DateTime.sunday) {
-      for (final r in reading) {
-        content.add(TaushevView(r));
+    if (context.languageCode == "ru") {
+      if (date.weekday == DateTime.sunday) {
+        for (final r in reading) {
+          content.add(TaushevView(r));
+        }
       }
-    }
 
-    if (Cal.getGreatFeast(date).isEmpty && date.weekday != DateTime.sunday && reading.length == 1) {
-      content.add(ZernaView(date));
+      if (Cal.getGreatFeast(date).isEmpty &&
+          date.weekday != DateTime.sunday &&
+          reading.length == 1) {
+        content.add(ZernaView(date));
+      }
     }
 
     content.add(const SizedBox(height: 5));

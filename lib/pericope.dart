@@ -26,7 +26,7 @@ class _PericopeViewState extends State<PericopeView> {
     final family = Theme.of(context).textTheme.bodyLarge!.fontFamily!;
 
     return FutureBuilder<List<dynamic>>(
-        future: PericopeModel(context.countryCode, widget.str).getPericope(PericopeFormat.widget),
+        future: PericopeModel(context.languageCode, widget.str).getPericope(PericopeFormat.widget),
         builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
           if (snapshot.hasError) {
             return const Center(child: Text("network error"));
@@ -84,7 +84,7 @@ class _ReadingViewState extends State<ReadingView> {
     super.didChangeDependencies();
 
     currentReading = widget.r.split("#");
-    title = JSON.translateReading(currentReading[0], lang: context.countryCode);
+    title = JSON.translateReading(currentReading[0], lang: context.languageCode);
     subtitle = currentReading.length > 1 ? currentReading[1].trim().tr() : null;
   }
 

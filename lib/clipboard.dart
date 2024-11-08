@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -13,8 +14,8 @@ class CopyToClipboard extends StatelessWidget {
       onTap: () async {
         await Clipboard.setData(ClipboardData(text: text));
 
-        const snackBar = SnackBar(
-          content: Text('Скопировано в буфер обмена'),
+        var snackBar = SnackBar(
+          content: Text("copied_to_clipboard".tr()),
         );
 
         ScaffoldMessenger.of(context).showSnackBar(snackBar);

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:supercharged/supercharged.dart';
 import 'package:http/http.dart' as http;
@@ -36,23 +37,20 @@ class FeofanViewState extends State<FeofanView> {
   double get fontSize => widget.fontSize;
 
   Widget getListTile(BuildContext context, String content,
-      {String? subtitle, String title = "Мысли на каждый день"}) {
+      {String? subtitle, String title = "everyday_thoughts"}) {
     savedContent = content;
     return Padding(
         padding: const EdgeInsets.only(bottom: 5),
         child: CustomListTile(
-            title: title,
+            title: title.tr(),
             subtitle: subtitle,
             onTap: () =>
-                BookPageSingle(title, builder: () => BookCellText(content)).push(context)));
+                BookPageSingle(title.tr(), builder: () => BookCellText(content)).push(context)));
   }
 
   Future<String> getFeofan(String id) async {
-    final payload = jsonEncode(<String, dynamic>{
-      'id': id,
-      'fuzzy': false,
-      'lang': context.countryCode
-    });
+    final payload =
+        jsonEncode(<String, dynamic>{'id': id, 'fuzzy': false, 'lang': context.languageCode});
 
     final r = await http.post(Uri.parse('https://$hostURL/feofan'), body: payload);
 
@@ -65,12 +63,8 @@ class FeofanViewState extends State<FeofanView> {
   }
 
   Future<String> getFeofanGospel(String id) async {
-    final payload = jsonEncode(<String, dynamic>{
-      'id': id,
-      'fuzzy': true,
-      'lang': context.countryCode
-
-    });
+    final payload =
+        jsonEncode(<String, dynamic>{'id': id, 'fuzzy': true, 'lang': context.languageCode});
 
     final r = await http.post(Uri.parse('https://$hostURL/feofan'), body: payload);
 
@@ -84,6 +78,9 @@ class FeofanViewState extends State<FeofanView> {
 
   String readingTranslate(String str) =>
       JSON.bibleTrans["ru"]!.entries.fold(str, (String prev, e) => prev.replaceAll(e.key, e.value));
+
+  String getId(String pericope) =>
+      context.languageCode == "en" ? pericope : pericope.replaceAll(" ", "");
 
   Future<List<Widget>> fetch(BuildContext context) async {
     List<Widget> result = [];
@@ -114,10 +111,13 @@ class FeofanViewState extends State<FeofanView> {
     final readings = ChurchReading.forDate(date);
 
     for (final r in readings) {
-      final pericope = readingTranslate(r.split("#")[0]);
-      final id = pericope.replaceAll(" ", "");
+      var pericope = r.split("#")[0];
 
-      var f = await getFeofan(id);
+      if (context.languageCode == "ru") {
+        pericope = readingTranslate(pericope);
+      }
+
+      var f = await getFeofan(getId(pericope));
       if (f.isNotEmpty) result.add(getListTile(context, f, subtitle: pericope));
     }
 
@@ -128,10 +128,13 @@ class FeofanViewState extends State<FeofanView> {
 
         for (final i in getRange(0, p.length, 2)) {
           if (["John", "Luke", "Mark", "Matthew"].contains(p[i])) {
-            final pericope = readingTranslate("${p[i]} ${p[i + 1]}");
-            final id = pericope.replaceAll(" ", "");
+            var pericope = "${p[i]} ${p[i + 1]}";
 
-            var f = await getFeofanGospel(id);
+            if (context.languageCode == "ru") {
+              pericope = readingTranslate(pericope);
+            }
+
+            var f = await getFeofanGospel(getId(pericope));
             if (f.isNotEmpty) result.add(getListTile(context, f, subtitle: pericope));
           }
         }

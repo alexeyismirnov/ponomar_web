@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -147,7 +148,7 @@ class TroparionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => FutureBuilder<List<Troparion>>(
-      future: fetch(context.countryCode),
+      future: fetch(context.languageCode),
       builder: (BuildContext context, AsyncSnapshot<List<Troparion>> snapshot) {
         if (snapshot.hasData) {
           final troparia = List<Troparion>.from(snapshot.data!);
@@ -156,7 +157,7 @@ class TroparionWidget extends StatelessWidget {
             return Padding(
                 padding: const EdgeInsets.only(bottom: 5),
                 child: CustomListTile(
-                    title: "Тропари и кондаки",
+                    title: "troparia_kontakia".tr(),
                     onTap: () => TroparionView(troparia).push(context)));
           }
         }

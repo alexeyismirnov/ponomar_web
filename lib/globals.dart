@@ -53,8 +53,12 @@ class JSON {
 
     bibleTrans['ru'] = Map<String, String>.from(
         jsonDecode(await rootBundle.loadString("assets/translations/ru-RU/reading.json")));
+    bibleTrans['en'] = Map<String, String>.from(
+        jsonDecode(await rootBundle.loadString("assets/translations/en-US/reading.json")));
 
     fastingComments['ru'] = Map<String, String>.from(
         jsonDecode(await rootBundle.loadString("assets/translations/ru-RU/fasting.json")));
+    fastingComments['en'] = Map<String, String>.from(
+        jsonDecode(await rootBundle.loadString("assets/translations/en-US/fasting.json")));
   }
 }
