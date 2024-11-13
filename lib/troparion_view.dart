@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import 'troparion_model.dart';
@@ -16,8 +17,6 @@ class TroparionView extends StatefulWidget {
 }
 
 class TroparionViewState extends State<TroparionView> {
-  String title = "Тропари и кондаки";
-
   Widget buildTroparion(Troparion t) {
     final fontSize = ConfigParam.fontSize.val();
 
@@ -56,6 +55,6 @@ class TroparionViewState extends State<TroparionView> {
       children: widget.troparia.map((t) => buildTroparion(t)).toList());
 
   @override
-  Widget build(BuildContext context) =>
-      BookPageSingle(title, builder: () => getContent(), showActions: widget.showActions);
+  Widget build(BuildContext context) => BookPageSingle("troparia_kontakia".tr(),
+      builder: () => getContent(), showActions: widget.showActions);
 }
