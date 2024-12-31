@@ -26,6 +26,8 @@ String hostURL = "ponomar-server.lm.r.appspot.com";
 
 class JSON {
   static late String calendar;
+  static Map<String, String> lives_calendar = {};
+
   static late String apostle, readingsJohn, gospelMatthew, gospelLuke, readingsLent;
   static late Function(String?) dateParser;
 
@@ -40,6 +42,8 @@ class JSON {
 
   static Future load() async {
     calendar = await rootBundle.loadString("assets/calendar/calendar.json");
+    lives_calendar['en'] = await rootBundle.loadString("assets/calendar/saints_lives_en.json");
+
     apostle = await rootBundle.loadString("assets/calendar/ReadingApostle.json");
     readingsJohn = await rootBundle.loadString("assets/calendar/ReadingJohn.json");
     gospelMatthew = await rootBundle.loadString("assets/calendar/ReadingMatthew.json");

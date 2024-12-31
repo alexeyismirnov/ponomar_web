@@ -24,6 +24,7 @@ import 'feofan.dart';
 import 'troparion_model.dart';
 import 'taushev.dart';
 import 'zerna.dart';
+import 'saints_lives.dart';
 
 class _FeastWidget extends StatelessWidget {
   final ChurchDay d;
@@ -282,6 +283,8 @@ class _DayViewState extends State<DayView> {
     }
 
     content.add(FeofanView(date));
+    content.add(SaintsLivesView(date));
+
 
     if (context.languageCode == "ru") {
       if (date.weekday == DateTime.sunday) {
