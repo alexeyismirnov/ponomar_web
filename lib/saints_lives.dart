@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 
 import 'package:supercharged/supercharged.dart';
-import 'package:http/http.dart' as http;
 import 'package:easy_localization/easy_localization.dart';
 import 'dart:html' as html;
 
@@ -109,6 +108,7 @@ class SaintsLivesView extends StatelessWidget {
     final cal = SaintsCalendar.fromDate(date, lang: context.languageCode);
     final cc = ChurchCalendar.fromDate(date);
     DateTime d = date;
+    List<Widget> res = [];
 
     await cal.initFuture;
 
@@ -119,39 +119,13 @@ class SaintsLivesView extends StatelessWidget {
     final days = cal.days.where((e) => e.date == d).toList();
     if (days.isEmpty) return null;
 
-    final titles = days.map<String>((d) => d.comment!).toList();
-    final payload = jsonEncode(<String, dynamic>{
-      'lang': context.languageCode,
-      'titles': titles,
-    });
-
-    List<Widget> res = [];
-    List<SaintsLivesModel> saints = [];
-
-    try {
-      final r = await http.post(Uri.parse('https://$hostURL/saints_lives'), body: payload);
-
-      if (r.statusCode == 200) {
-        var data = utf8.decode(r.bodyBytes);
-
-        saints = (jsonDecode(data) as List<dynamic>)
-            .map<SaintsLivesModel>((b) => SaintsLivesModel.fromJson(b))
-            .toList();
-
-        if (saints.isEmpty) return null;
-      }
-    } catch (e) {
-      print(e);
-      return null;
-    }
-
-    for (var s in saints) {
+    for (var s in days) {
       res.add(CustomListTile(
           padding: 10,
-          title: s.title,
+          title: s.comment!,
           subtitle: 'lives_of_saints'.tr(),
           onTap: () {
-            html.window.open("$baseURL/${s.text}", '');
+            html.window.open("$baseURL/${s.reading}", '');
           }));
     }
 
