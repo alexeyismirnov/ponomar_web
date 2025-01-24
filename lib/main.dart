@@ -54,11 +54,11 @@ void main() async {
   }
 
   runApp(EasyLocalization(
-      supportedLocales: const [Locale('en', 'US')],
+      supportedLocales: const [Locale('ru', 'RU')],
       path: 'ui,cal,reading,library',
       assetLoader: DirectoryAssetLoader(basePath: "assets/translations"),
-      fallbackLocale: const Locale('en', 'US'),
-      startLocale: const Locale('en', 'US'),
+      fallbackLocale: const Locale('ru', 'RU'),
+      startLocale: const Locale('ru', 'RU'),
       child: RestartWidget(ContainerPage(tabs: [
         AnimatedTab(icon: const Icon(Icons.home), title: 'homepage', content: MainPage()),
         AnimatedTab(

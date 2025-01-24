@@ -285,7 +285,6 @@ class _DayViewState extends State<DayView> {
     content.add(FeofanView(date));
     content.add(SaintsLivesView(date));
 
-
     if (context.languageCode == "ru") {
       if (date.weekday == DateTime.sunday) {
         for (final r in reading) {

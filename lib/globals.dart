@@ -43,6 +43,7 @@ class JSON {
   static Future load() async {
     calendar = await rootBundle.loadString("assets/calendar/calendar.json");
     lives_calendar['en'] = await rootBundle.loadString("assets/calendar/saints_lives_en.json");
+    lives_calendar['ru'] = await rootBundle.loadString("assets/calendar/saints_lives_ru.json");
 
     apostle = await rootBundle.loadString("assets/calendar/ReadingApostle.json");
     readingsJohn = await rootBundle.loadString("assets/calendar/ReadingJohn.json");
