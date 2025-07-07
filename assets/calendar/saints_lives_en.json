@@ -1937,5 +1937,488 @@
   "feastType" : "none",
   "saint": "Zotikus the Keeper of Orphans",
    "reading" : "zotikus-the-keeper-of-orphans"
-}
+},
+  {
+    "date": "",
+    "feastName": "sunday2AfterPentecost",
+    "feastType": "none",
+    "saint": "All Saints of the Russian Church",
+    "reading": "all-saints-of-the-russian-church"
+  },
+  {
+    "date": "24 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Apostles Bartholomew and Barnabas",
+    "reading": "apostles-bartholomew-and-barnabas"
+  },
+  {
+    "date": "2 July",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Martyr Zosimos of Apollonia",
+    "reading": "martyr-zosimos-of-apollonia"
+  },
+  {
+    "date": "28 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Saint Jerome",
+    "reading": "saint-jerome"
+  },
+  {
+    "date": "26 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Martyr Aquilina of Biblos",
+    "reading": "martyr-aquilina-of-biblos"
+  },
+  {
+    "date": "30 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Martyrs of Chalcedon",
+    "reading": "martyrs-of-chalcedon"
+  },
+  {
+    "date": "19 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Hilarion the new, Abbot of the Dalmatus Monastery",
+    "reading": "hilarion-the-new-abbot-of-the-dalmatus-monastery"
+  },
+  {
+    "date": "11 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Saint Luke of Crimea",
+    "reading": "saint-luke-of-crimea"
+  },
+  {
+    "date": "2 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Saint Alexis the Metropolitan",
+    "reading": "saint-alexis-the-metropolitan"
+  },
+  {
+    "date": "15 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Edict of Milan",
+    "reading": "edict-of-milan"
+  },
+  {
+    "date": "25 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Saint Peter of Athos",
+    "reading": "saint-peter-of-athos"
+  },
+  {
+    "date": "",
+    "feastName": "saturdayTrinity",
+    "feastType": "none",
+    "saint": "Saturday of Souls Before Pentecost",
+    "reading": "saturday-of-souls-before-pentecost"
+  },
+  {
+    "date": "22 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Saint Aquilina of Phoenicia",
+    "reading": "saint-aquilina-of-phoenicia"
+  },
+  {
+    "date": "10 May",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Simeon of Jerusalem",
+    "reading": "simeon-of-jerusalem"
+  },
+  {
+    "date": "13 May",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Holy new Martyr Argyra",
+    "reading": "holy-new-martyr-argyra"
+  },
+  {
+    "date": "1 May",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Martyr John the new of Epirus",
+    "reading": "martyr-john-the-new-of-epirus"
+  },
+  {
+    "date": "4 May",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Maximianus of Constantinople",
+    "reading": "maximianus-of-constantinople"
+  },
+  {
+    "date": "1 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Martyr Patrick of Prusa and his Companions",
+    "reading": "martyr-patrick-of-prusa-and-his-companions"
+  },
+  {
+    "date": "22 May",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Translation of the Relics of Saint Nicolas From Myra to Bari",
+    "reading": "translation-of-the-relics-of-saint-nicolas-from-myra-to-bari"
+  },
+  {
+    "date": "7 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Saint Therapont of Cyprus",
+    "reading": "saint-therapont-of-cyprus"
+  },
+  {
+    "date": "9 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Martyrs Theodora and Didymus",
+    "reading": "martyrs-theodora-and-didymus"
+  },
+  {
+    "date": "31 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Athanasius and Cyrill of Alexandria",
+    "reading": "athanasius-and-cyrill-of-alexandria"
+  },
+  {
+    "date": "22 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Cyril of Alexandria",
+    "reading": "cyril-of-alexandria"
+  },
+  {
+    "date": "",
+    "feastName": "sunday6AfterPascha",
+    "feastType": "none",
+    "saint": "Sunday of the Blind man",
+    "reading": "sunday-of-the-blind-man"
+  },
+  {
+    "date": "",
+    "feastName": "apodosisOfPentecost",
+    "feastType": "none",
+    "saint": "Leavetaking of Pentecost",
+    "reading": "leavetaking-of-pentecost"
+  },
+  {
+    "date": "8 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Martyr George the new",
+    "reading": "martyr-george-the-new"
+  },
+  {
+    "date": "2 April",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Martyred Holy Fathers at the Monastery of Saint Savva",
+    "reading": "martyred-holy-fathers-at-the-monastery-of-saint-savva"
+  },
+  {
+    "date": "9 April",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Saint Matrona of Thessaloniki",
+    "reading": "saint-matrona-of-thessaloniki"
+  },
+  {
+    "date": "19 March",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Uncovering of the Precious Cross and the Precious Nails by Saint Helen in Jerusalem",
+    "reading": "uncovering-of-the-precious-cross-and-the-precious-nails-by-saint-helen-in-jerusalem"
+  },
+  {
+    "date": "",
+    "feastName": "sunday5GreatLent2",
+    "feastType": "none",
+    "saint": "The Fifth Sunday of Great Lent",
+    "reading": "the-fifth-sunday-of-great-lent"
+  },
+  {
+    "date": "",
+    "feastName": "friday5GreatLent",
+    "feastType": "none",
+    "saint": "On the Eve of Akathist Saturday",
+    "reading": "on-the-eve-of-akathist-saturday"
+  },
+  {
+    "date": "",
+    "feastName": "saturday5GreatLent",
+    "feastType": "none",
+    "saint": "Saturday of the Akathist",
+    "reading": "saturday-of-the-akathist"
+  },
+  {
+    "date": "18 April",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Saint Plato the Studite",
+    "reading": "saint-plato-the-studite"
+  },
+  {
+    "date": "",
+    "feastName": "sunday4GreatLent",
+    "feastType": "none",
+    "saint": "The Fourth Sunday of Lent",
+    "reading": "the-fourth-sunday-of-lent"
+  },
+  {
+    "date": "",
+    "feastName": "radonitsa",
+    "feastType": "none",
+    "saint": "Radonitsa or Day of Rejoicing",
+    "reading": "radonitsa-or-day-of-rejoicing"
+  },
+  {
+    "date": "25 April",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Isaac the Syrian, Abbot of Spoleto",
+    "reading": "isaac-the-syrian-abbot-of-spoleto"
+  },
+  {
+    "date": "",
+    "feastName": "lazarusDeath",
+    "feastType": "none",
+    "saint": "Wednesday of the Sixth Week of Great Lent",
+    "reading": "wednesday-of-the-sixth-week-of-great-lent"
+  },
+  {
+    "date": "",
+    "feastName": "lazarusSaturday",
+    "feastType": "none",
+    "saint": "Lazarus Saturday",
+    "reading": "lazarus-saturday"
+  },
+  {
+    "date": "",
+    "feastName": "brightMonday",
+    "feastType": "none",
+    "saint": "Bright Monday",
+    "reading": "bright-monday"
+  },
+  {
+    "date": "",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Great Tuesday",
+    "reading": "great-tuesday"
+  },
+  {
+    "date": "",
+    "feastName": "greatThursday",
+    "feastType": "none",
+    "saint": "Maundy Thursday",
+    "reading": "maundy-thursday"
+  },
+  {
+    "date": "",
+    "feastName": "greatFriday",
+    "feastType": "none",
+    "saint": "Good Friday",
+    "reading": "good-friday"
+  },
+  {
+    "date": "",
+    "feastName": "pascha",
+    "feastType": "none",
+    "saint": "Easter",
+    "reading": "easter"
+  },
+  {
+    "date": "",
+    "feastName": "brightFriday",
+    "feastType": "none",
+    "saint": "Easter Friday",
+    "reading": "easter-friday"
+  },
+  {
+    "date": "",
+    "feastName": "sunday2AfterPascha",
+    "feastType": "none",
+    "saint": "Thomas Sunday",
+    "reading": "thomas-sunday"
+  },
+  {
+    "date": "",
+    "feastName": "apodosis_pascha",
+    "feastType": "none",
+    "saint": "Leavetaking of Easter",
+    "reading": "leavetaking-of-easter"
+  },
+  {
+    "date": "23 May",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Martyr Hesychios of Antioch",
+    "reading": "martyr-hesychios-of-antioch"
+  },
+  {
+    "date": "",
+    "feastName": "sunday5AfterPascha",
+    "feastType": "none",
+    "saint": "Sunday of the Samaritan Woman",
+    "reading": "sunday-of-the-samaritan-woman"
+  },
+  {
+    "date": "3 May",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Saint Theodore Trichinas",
+    "reading": "saint-theodore-trichinas"
+  },
+  {
+    "date": "3 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Juliana of Nicomedia",
+    "reading": "juliana-of-nicomedia"
+  },
+  {
+    "date": "18 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Eve of the Theophany",
+    "reading": "eve-of-the-theophany"
+  },
+  {
+    "date": "3 February",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Icon of the Mother of God „Consolation“",
+    "reading": "icon-of-the-mother-of-god-consolation"
+  },
+  {
+    "date": "24 February",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Theodosius the Great",
+    "reading": "theodosius-the-great"
+  },
+  {
+    "date": "25 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Tatiana of Rome",
+    "reading": "tatiana-of-rome"
+  },
+  {
+    "date": "13 February",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Martyr Tryphaina at Cyzicus",
+    "reading": "martyr-tryphaina-at-cyzicus"
+  },
+  {
+    "date": "17 February",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Saint Nicholas the Studite",
+    "reading": "saint-nicholas-the-studite"
+  },
+  {
+    "date": "",
+    "feastName": "sundayOfZacchaeus",
+    "feastType": "none",
+    "saint": "The Sunday of Zacchaeus",
+    "reading": "the-sunday-of-zacchaeus"
+  },
+  {
+    "date": "5 February",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Clement of Ancyra",
+    "reading": "clement-of-ancyra"
+  },
+  {
+    "date": "",
+    "feastName": "sundayOfProdigalSon",
+    "feastType": "none",
+    "saint": "Sunday of the Prodigal Son",
+    "reading": "sunday-of-the-prodigal-son"
+  },
+  {
+    "date": "19 February",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Saint Bucolus of Smyrna",
+    "reading": "saint-bucolus-of-smyrna"
+  },
+  {
+    "date": "18 February",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Saint Agatha of Sicily",
+    "reading": "saint-agatha-of-sicily"
+  },
+  {
+    "date": "",
+    "feastName": "saturdayOfDeparted",
+    "feastType": "none",
+    "saint": "Memorial Saturday",
+    "reading": "memorial-saturday"
+  },
+  {
+    "date": "20 March",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Hieromartyrs of Chersonesos",
+    "reading": "hieromartyrs-of-chersonesos"
+  },
+  {
+    "date": "22 March",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Forty Martyrs of Sebaste",
+    "reading": "forty-martyrs-of-sebaste"
+  },
+  {
+    "date": "29 March",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Martyr Papas of Laranda",
+    "reading": "martyr-papas-of-laranda"
+  },
+  {
+    "date": "25 March",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Saint Gregory the Great",
+    "reading": "saint-gregory-the-great"
+  },
+  {
+    "date": "5 April",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Saint Nikon of Sicily and 199 Disciples With Him",
+    "reading": "saint-nikon-of-sicily-and-199-disciples-with-him"
+  },
+  {
+    "date": "2 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Ignatius of Antioch",
+    "reading": "ignatius-of-antioch"
+  },
+  {
+    "date" : "",
+    "feastName" : "kurskTheotokos",
+    "feastType" : "none",
+    "saint": "Kursk-Root \"The Sign\" Icon of the Mother of God",
+    "reading": "kursk-root-icon-of-the-theotokos"
+  }
 ]

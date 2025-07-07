@@ -77,12 +77,37 @@ class SaintsCalendar {
     day("ascension").date = pascha + 39.days;
     day("pentecost").date = pentecost;
     day("sunday1AfterPentecost").date = pentecost + 7.days;
-
     day("sunday3AfterPascha").date = pascha + 14.days;
     day("sunday4AfterPascha").date = pascha + 21.days;
     day("sunday7AfterPascha").date = pascha + 42.days;
-
     day("kurskTheotokos").date = pentecost + 12.days;
+
+    day("sundayOfZacchaeus").date = greatLentStart - 29.days;
+    day("sundayOfProdigalSon").date = greatLentStart - 15.days;
+    day("saturdayOfDeparted").date = greatLentStart - 9.days;
+
+
+    day("sunday4GreatLent").date = greatLentStart + 27.days;
+    day("friday5GreatLent").date = greatLentStart + 32.days;
+    day("saturday5GreatLent").date = greatLentStart + 33.days;
+    day("sunday5GreatLent2").date = greatLentStart + 34.days;
+
+    day("lazarusDeath").date = pascha - 11.days;
+    day("lazarusSaturday").date = pascha - 8.days;
+    day("greatFriday").date = pascha - 2.days;
+
+    day("pascha").date = pascha;
+    day("brightMonday").date = pascha + 1.days;
+    day("brightFriday").date = pascha + 5.days;
+    day("sunday2AfterPascha").date = pascha + 7.days;
+    day("radonitsa").date = pascha + 9.days;
+    day("sunday5AfterPascha").date = pascha + 28.days;
+    day("sunday6AfterPascha").date = pascha + 35.days;
+    day("apodosis_pascha").date = pascha + 38.days;
+    day("saturdayTrinity").date = pascha + 48.days;
+
+    day("apodosisOfPentecost").date = pentecost + 6.days;
+    day("sunday2AfterPentecost").date = pentecost + 14.days;
 
     if (lang == 'en') {
       var nativity = DateTime.utc(year, 1, 7);

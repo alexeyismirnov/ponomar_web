@@ -16,6 +16,13 @@ import 'config_param.dart';
 import 'church_fasting.dart';
 import 'church_page.dart';
 
+//const appLang = 'ru';
+//const appCountry = 'RU';
+
+const appLang = 'en';
+const appCountry = 'US';
+
+
 class MyHttpOverrides extends HttpOverrides {
   @override
   HttpClient createHttpClient(SecurityContext? context) {
@@ -54,11 +61,11 @@ void main() async {
   }
 
   runApp(EasyLocalization(
-      supportedLocales: const [Locale('ru', 'RU')],
+      supportedLocales: const [Locale(appLang, appCountry)],
       path: 'ui,cal,reading,library',
       assetLoader: DirectoryAssetLoader(basePath: "assets/translations"),
-      fallbackLocale: const Locale('ru', 'RU'),
-      startLocale: const Locale('ru', 'RU'),
+      fallbackLocale: const Locale(appLang, appCountry),
+      startLocale: const Locale(appLang, appCountry),
       child: RestartWidget(ContainerPage(tabs: [
         AnimatedTab(icon: const Icon(Icons.home), title: 'homepage', content: MainPage()),
         AnimatedTab(
