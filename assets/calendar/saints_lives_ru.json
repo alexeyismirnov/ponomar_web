@@ -1790,5 +1790,488 @@
   "feastType" : "none",
   "saint": "Василий Великий",
   "reading" : "vasilii-velikii"
-}
+},
+  {
+    "date": "",
+    "feastName": "sunday2AfterPentecost",
+    "feastType": "none",
+    "saint": "Всех Святых Русской Церкви",
+    "reading": "vsekh-svyatykh-russkoi-cerkvi"
+  },
+  {
+    "date": "24 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Апостолы Варфоломей и Варнава",
+    "reading": "apostoly-varfolomei-i-varnava"
+  },
+  {
+    "date": "2 July",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Мученик Зосима Аполлониадский",
+    "reading": "muchenik-zosima-apolloniadskii"
+  },
+  {
+    "date": "28 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Святой Преподобный Иероним Стридонский",
+    "reading": "svyatoi-prepodobnyi-ieronim-stridonskii"
+  },
+  {
+    "date": "26 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Акилина Библосская",
+    "reading": "akilina-biblosskaya"
+  },
+  {
+    "date": "30 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Халкидонские Мученики",
+    "reading": "khalkidonskie-mucheniki"
+  },
+  {
+    "date": "",
+    "feastName": "apodosisOfPentecost",
+    "feastType": "none",
+    "saint": "Отдание Пятидесятницы",
+    "reading": "otdanie-pyatidesyatnicy"
+  },
+  {
+    "date": "8 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Мученик Георгий Новый",
+    "reading": "muchenik-georgii-novyi"
+  },
+  {
+    "date": "2 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Святой Алексий Митрополит Русской Церкви",
+    "reading": "svyatoi-aleksii-mitropolit-russkoi-cerkvi"
+  },
+  {
+    "date": "15 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Миланский Эдикт",
+    "reading": "milanskii-edikt"
+  },
+  {
+    "date": "25 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Петр Афонский",
+    "reading": "petr-afonskii"
+  },
+  {
+    "date": "22 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Святая Акилина Финикийская",
+    "reading": "svyataya-akilina-finikiiskaya"
+  },
+  {
+    "date": "11 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Святой Лука Крымский",
+    "reading": "svyatoi-luka-krymskii"
+  },
+  {
+    "date": "19 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Иларион Новый, Далматский",
+    "reading": "ilarion-novyi-imenuemyi-dalmatskim"
+  },
+  {
+    "date": "4 May",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Святой Максимиан Константинопольский",
+    "reading": "svyatoi-maksimian-konstantinopolskii"
+  },
+  {
+    "date": "1 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Патрикий Прусский",
+    "reading": "patrikii-prusskii"
+  },
+  {
+    "date": "22 May",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Перенеение Мощей Святителя Николая",
+    "reading": "pereneenie-moshei-svyatitelya-nikolaya"
+  },
+  {
+    "date": "7 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Ферапонт Кипрский",
+    "reading": "ferapont-kiprskii"
+  },
+  {
+    "date": "9 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Мученики Феодора и Дидим",
+    "reading": "mucheniki-feodora-i-didim"
+  },
+  {
+    "date": "",
+    "feastName": "saturdayTrinity",
+    "feastType": "none",
+    "saint": "Троицкая Вселенская Суббота",
+    "reading": "troickaya-vselenskaya-subbota"
+  },
+  {
+    "date": "31 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Афанасий и Кирилл Александрийские",
+    "reading": "afanasii-i-kirill-aleksandriiskie"
+  },
+  {
+    "date": "22 June",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Кирилл Александрийский",
+    "reading": "kirill-aleksandriiskii"
+  },
+  {
+    "date": "",
+    "feastName": "sunday6AfterPascha",
+    "feastType": "none",
+    "saint": "Неделя о Слепом",
+    "reading": "nedelya-o-slepom"
+  },
+  {
+    "date": "",
+    "feastName": "greatThursday",
+    "feastType": "none",
+    "saint": "Великий Четверг",
+    "reading": "velikii-chetverg"
+  },
+  {
+    "date": "",
+    "feastName": "greatFriday",
+    "feastType": "none",
+    "saint": "Великая Пятница",
+    "reading": "velikaya-pyatnica"
+  },
+  {
+    "date": "",
+    "feastName": "pascha",
+    "feastType": "none",
+    "saint": "Пасха",
+    "reading": "paskha"
+  },
+  {
+    "date": "",
+    "feastName": "brightFriday",
+    "feastType": "none",
+    "saint": "Светлая Пятница",
+    "reading": "svetlaya-pyatnica"
+  },
+  {
+    "date": "",
+    "feastName": "sunday2AfterPascha",
+    "feastType": "none",
+    "saint": "Неделя Апостола Фомы",
+    "reading": "nedelya-apostola-fomy"
+  },
+  {
+    "date": "",
+    "feastName": "apodosis_pascha",
+    "feastType": "none",
+    "saint": "Отдание Пасхи",
+    "reading": "otdanie-paskhi"
+  },
+  {
+    "date": "23 May",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Мученик Исихий Антиохийский",
+    "reading": "muchenik-isikhii-antiokhiiskii"
+  },
+  {
+    "date": "",
+    "feastName": "sunday5AfterPascha",
+    "feastType": "none",
+    "saint": "Неделя о Самарянке",
+    "reading": "nedelya-o-samaryanke"
+  },
+  {
+    "date": "3 May",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Преподобный Феодор Трихина",
+    "reading": "prepodobnyi-feodor-trikhina"
+  },
+  {
+    "date": "10 May",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Симеон Иерусалимский",
+    "reading": "simeon-ierusalimskii"
+  },
+  {
+    "date": "24 May",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Кирилл и Мефодий",
+    "reading": "kirill-i-mefodii"
+  },
+  {
+    "date": "13 May",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Святая Новомученица Аргира",
+    "reading": "svyataya-novomuchenica-argira"
+  },
+  {
+    "date": "1 May",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Мученик Иоанн Новый",
+    "reading": "muchenik-ioann-novyi"
+  },
+  {
+    "date": "9 April",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Матрона Солунская",
+    "reading": "matrona-solunskaya"
+  },
+  {
+    "date": "2 April",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Память Преподобных, в Обители Святого Саввы Убиенных",
+    "reading": "pamyat-prepodobnykh-v-obiteli-svyatogo-savvy-ubiennykh"
+  },
+  {
+    "date": "19 March",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Обретение Честного Креста и Гвоздей Равноапостольной Еленой",
+    "reading": "obretenie-chestnogo-kresta-i-gvozdei-ravnoapostolnoi-elenoi"
+  },
+  {
+    "date": "",
+    "feastName": "sunday5GreatLent2",
+    "feastType": "none",
+    "saint": "Пятая Неделя Великого Поста",
+    "reading": "pyataya-nedelya-velikogo-posta"
+  },
+  {
+    "date": "",
+    "feastName": "friday5GreatLent",
+    "feastType": "none",
+    "saint": "Накануне Субботы Акафиста",
+    "reading": "nakanune-subboty-akafista"
+  },
+  {
+    "date": "",
+    "feastName": "saturday5GreatLent",
+    "feastType": "none",
+    "saint": "Суббота Акафиста",
+    "reading": "subbota-akafista"
+  },
+  {
+    "date": "18 April",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Платон Студит",
+    "reading": "platon-studit"
+  },
+  {
+    "date": "",
+    "feastName": "sunday4GreatLent",
+    "feastType": "none",
+    "saint": "Четвертая Неделя Великого Поста",
+    "reading": "chetvertaya-nedelya-velikogo-posta"
+  },
+  {
+    "date": "",
+    "feastName": "radonitsa",
+    "feastType": "none",
+    "saint": "Радоница",
+    "reading": "radonica"
+  },
+  {
+    "date": "25 April",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Исаак Сирийский в Сполете Италийском",
+    "reading": "isaak-siriiskii-v-spolete-italiiskom"
+  },
+  {
+    "date": "",
+    "feastName": "lazarusDeath",
+    "feastType": "none",
+    "saint": "Среда Шестой Седмицы Великого Поста",
+    "reading": "sreda-shestoi-sedmicy-velikogo-posta"
+  },
+  {
+    "date": "",
+    "feastName": "lazarusSaturday",
+    "feastType": "none",
+    "saint": "Лазарева Суббота",
+    "reading": "lazareva-subbota"
+  },
+  {
+    "date": "",
+    "feastName": "brightMonday",
+    "feastType": "none",
+    "saint": "Светлый Понедельник",
+    "reading": "svetlyi-ponedelnik"
+  },
+  {
+    "date": "",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Великий Вторник",
+    "reading": "velikii-vtornik"
+  },
+  {
+    "date": "17 February",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Николай Студит",
+    "reading": "nikolai-studit"
+  },
+  {
+    "date": "",
+    "feastName": "sundayOfZacchaeus",
+    "feastType": "none",
+    "saint": "Проповедь в Неделю о Закхее",
+    "reading": "propoved-v-nedelyu-o-zakkhee"
+  },
+  {
+    "date": "5 February",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Климент Анкирский",
+    "reading": "kliment-ankirskii"
+  },
+  {
+    "date": "",
+    "feastName": "sundayOfProdigalSon",
+    "feastType": "none",
+    "saint": "Неделя о Блудном Сыне",
+    "reading": "nedelya-o-bludnom-syne"
+  },
+  {
+    "date": "19 February",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Вукол Смирнский",
+    "reading": "vukol-smirnskii"
+  },
+  {
+    "date": "18 February",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Агафия Сицилийская",
+    "reading": "agafiya-siciliiskaya"
+  },
+  {
+    "date": "",
+    "feastName": "saturdayOfDeparted",
+    "feastType": "none",
+    "saint": "Вселенская Суббота Поминовения",
+    "reading": "vselenskaya-subbota-pominoveniya"
+  },
+  {
+    "date": "20 March",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Священномученики Херсонесские",
+    "reading": "svyashennomucheniki-khersonesskie"
+  },
+  {
+    "date": "22 March",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Сорок Севастийских Мучеников",
+    "reading": "sorok-sevastiiskikh-muchenikov"
+  },
+  {
+    "date": "29 March",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Мученик Папа Ларандский",
+    "reading": "muchenik-papa-larandskii"
+  },
+  {
+    "date": "25 March",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Григорий Двоеслов",
+    "reading": "grigorii-dvoeslov"
+  },
+  {
+    "date": "5 April",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Никон Сицилийский и 199 Учеников",
+    "reading": "nikon-siciliiskii-i-199-uchenikov"
+  },
+  {
+    "date": "3 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Юлиания Никомидийская",
+    "reading": "yulianiya-nikomidiiskaya"
+  },
+  {
+    "date": "2 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Игнатий Богоносец",
+    "reading": "ignatii-bogonosec"
+  },
+  {
+    "date": "18 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Навечерие Богоявления",
+    "reading": "navecherie-bogoyavleniya"
+  },
+  {
+    "date": "3 February",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Икона Божьей Матери Отрада и Утешение",
+    "reading": "ikona-bozhei-materi-otrada-i-uteshenie"
+  },
+  {
+    "date": "24 February",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Феодосий Великий",
+    "reading": "feodosii-velikii"
+  },
+  {
+    "date": "25 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Память Мученицы Татьяны Римской",
+    "reading": "pamyat-muchenicy-tatyany-rimskoi"
+  },
+  {
+    "date": "13 February",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Трифена Кизическая",
+    "reading": "trifena-kizicheskaya"
+  }
 ]
