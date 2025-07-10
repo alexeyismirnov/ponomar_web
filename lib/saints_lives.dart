@@ -60,15 +60,14 @@ class SaintsCalendar {
     day("saturdayOfFathers").date = greatLentStart - 2.days;
     day("sunday4GreatLent").date = greatLentStart + 27.days;
 
-    if (lang == 'en') {
-      day("beginningOfGreatLent").date = greatLentStart;
-      day("saturday1GreatLent").date = greatLentStart + 5.days;
-      day("sunday1GreatLent").date = greatLentStart + 6.days;
-      day("sunday3GreatLent").date = greatLentStart + 20.days;
-      day("sunday5GreatLent").date = greatLentStart + 34.days;
-      day("palmSunday").date = pascha - 7.days;
-      day("greatWednesday").date = pascha - 4.days;
-    }
+    day("beginningOfGreatLent").date = greatLentStart;
+    day("saturday1GreatLent").date = greatLentStart + 5.days;
+    day("sunday1GreatLent").date = greatLentStart + 6.days;
+    day("sunday3GreatLent").date = greatLentStart + 20.days;
+
+    day("sunday5GreatLent").date = greatLentStart + 34.days;
+    day("palmSunday").date = pascha - 7.days;
+    day("greatWednesday").date = pascha - 4.days;
 
     day("greatMonday").date = pascha - 6.days;
     day("greatTuesday").date = pascha - 5.days;
@@ -86,11 +85,9 @@ class SaintsCalendar {
     day("sundayOfProdigalSon").date = greatLentStart - 15.days;
     day("saturdayOfDeparted").date = greatLentStart - 9.days;
 
-
     day("sunday4GreatLent").date = greatLentStart + 27.days;
     day("friday5GreatLent").date = greatLentStart + 32.days;
     day("saturday5GreatLent").date = greatLentStart + 33.days;
-    day("sunday5GreatLent2").date = greatLentStart + 34.days;
 
     day("lazarusDeath").date = pascha - 11.days;
     day("lazarusSaturday").date = pascha - 8.days;
@@ -109,13 +106,11 @@ class SaintsCalendar {
     day("apodosisOfPentecost").date = pentecost + 6.days;
     day("sunday2AfterPentecost").date = pentecost + 14.days;
 
-    if (lang == 'en') {
-      var nativity = DateTime.utc(year, 1, 7);
-      if (nativity.weekday == DateTime.sunday) {
-        day("josephBetrothed").date = nativity + 1.days;
-      } else {
-        day("josephBetrothed").date = Cal.nearestSundayAfter(nativity);
-      }
+    var nativity = DateTime.utc(year, 1, 7);
+    if (nativity.weekday == DateTime.sunday) {
+      day("josephBetrothed").date = nativity + 1.days;
+    } else {
+      day("josephBetrothed").date = Cal.nearestSundayAfter(nativity);
     }
   }
 

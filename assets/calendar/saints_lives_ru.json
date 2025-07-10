@@ -2066,7 +2066,7 @@
   },
   {
     "date": "",
-    "feastName": "sunday5GreatLent2",
+    "feastName": "sunday5GreatLent",
     "feastType": "none",
     "saint": "Пятая Неделя Великого Поста",
     "reading": "pyataya-nedelya-velikogo-posta"
@@ -2273,5 +2273,54 @@
     "feastType": "none",
     "saint": "Трифена Кизическая",
     "reading": "trifena-kizicheskaya"
+  },
+  {
+    "date" : "",
+    "feastName" : "beginningOfGreatLent",
+    "feastType" : "none",
+    "saint": "Два времени Великого Поста",
+    "reading" : "dva-vremeni-velikogo-posta"
+  },
+  {
+    "date" : "",
+    "feastName" : "saturday1GreatLent",
+    "feastType" : "none",
+    "saint": "Святой Великомученик Феодор Тирон",
+    "reading" : "svyatoi-velikomuchenik-feodor-tiron"
+  },
+  {
+    "date" : "",
+    "feastName" : "sunday1GreatLent",
+    "feastType" : "none",
+    "saint": "Торжество Православия",
+    "reading" : "torzhestvo-pravoslaviya"
+  },
+  {
+    "date" : "",
+    "feastName" : "sunday3GreatLent",
+    "feastType" : "none",
+    "saint": "Неделя Крестопоклонная",
+    "reading" : "poklonenie-krestu"
+  },
+  {
+    "date" : "",
+    "feastName" : "palmSunday",
+    "feastType" : "none",
+    "saint": "Вербное Воскресенье",
+    "reading" : "verbnoe-voskresene"
+  },
+  {
+    "date" : "",
+    "feastName" : "greatWednesday",
+    "feastType" : "none",
+    "saint": "Великая Среда",
+    "reading" : "velikaya-sreda"
+  },
+  {
+    "date" : "",
+    "feastName" : "josephBetrothed",
+    "feastType" : "none",
+    "saint": "Праведный Иосиф",
+    "reading" : "pravednyi-iosif"
   }
 ]
