@@ -20,13 +20,25 @@ class PericopeView extends StatefulWidget {
 }
 
 class _PericopeViewState extends State<PericopeView> {
+  // Add a future field to store the result
+  Future<List<dynamic>>? _pericopeFuture;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    // Initialize the future only once
+    _pericopeFuture ??= PericopeModel(context.languageCode, widget.str)
+        .getPericope(PericopeFormat.widget);
+  }
+
   @override
   Widget build(BuildContext context) {
     final fontSize = ConfigParam.fontSize.val();
     final family = Theme.of(context).textTheme.bodyLarge!.fontFamily!;
 
     return FutureBuilder<List<dynamic>>(
-        future: PericopeModel(context.languageCode, widget.str).getPericope(PericopeFormat.widget),
+        future: _pericopeFuture,
         builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
           if (snapshot.hasError) {
             return const Center(child: Text("network error"));
@@ -44,15 +56,21 @@ class _PericopeViewState extends State<PericopeView> {
                         child: RichText(
                       text: TextSpan(
                           text: "$title\n",
-                          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                              fontWeight: FontWeight.bold, fontFamily: family, fontSize: fontSize)),
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyLarge!
+                              .copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: family,
+                                  fontSize: fontSize)),
                       textAlign: TextAlign.center,
                     ))
                   ]));
 
               var bu = values[1] as BibleUtil;
               content.add(CopyToClipboard(bu.getText(),
-                  child: RichText(text: TextSpan(children: bu.getTextSpan(context)))));
+                  child: RichText(
+                      text: TextSpan(children: bu.getTextSpan(context)))));
             }
 
             return Column(
@@ -84,7 +102,8 @@ class _ReadingViewState extends State<ReadingView> {
     super.didChangeDependencies();
 
     currentReading = widget.r.split("#");
-    title = JSON.translateReading(currentReading[0], lang: context.languageCode);
+    title =
+        JSON.translateReading(currentReading[0], lang: context.languageCode);
     subtitle = currentReading.length > 1 ? currentReading[1].trim().tr() : null;
   }
 

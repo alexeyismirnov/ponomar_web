@@ -22,13 +22,17 @@ extension ConfigParamExt on ConfigParam {
   static var bookmarks;
 }
 
-String hostURL = "ponomar-server.lm.r.appspot.com";
+String hostURL = "ponomarserver-production.up.railway.app";
 
 class JSON {
   static late String calendar;
   static Map<String, String> lives_calendar = {};
 
-  static late String apostle, readingsJohn, gospelMatthew, gospelLuke, readingsLent;
+  static late String apostle,
+      readingsJohn,
+      gospelMatthew,
+      gospelLuke,
+      readingsLent;
   static late Function(String?) dateParser;
 
   static late String OldTestamentItems, OldTestamentFilenames;
@@ -37,33 +41,45 @@ class JSON {
   static Map<String, Map<String, String>> bibleTrans = {};
   static Map<String, Map<String, String>> fastingComments = {};
 
-  static translateReading(String s, {required String lang}) =>
-      bibleTrans[lang]!.entries.fold(s, (String prev, e) => prev.replaceAll(e.key, e.value));
+  static translateReading(String s, {required String lang}) => bibleTrans[lang]!
+      .entries
+      .fold(s, (String prev, e) => prev.replaceAll(e.key, e.value));
 
   static Future load() async {
     calendar = await rootBundle.loadString("assets/calendar/calendar.json");
-    lives_calendar['en'] = await rootBundle.loadString("assets/calendar/saints_lives_en.json");
-    lives_calendar['ru'] = await rootBundle.loadString("assets/calendar/saints_lives_ru.json");
+    lives_calendar['en'] =
+        await rootBundle.loadString("assets/calendar/saints_lives_en.json");
+    lives_calendar['ru'] =
+        await rootBundle.loadString("assets/calendar/saints_lives_ru.json");
 
-    apostle = await rootBundle.loadString("assets/calendar/ReadingApostle.json");
-    readingsJohn = await rootBundle.loadString("assets/calendar/ReadingJohn.json");
-    gospelMatthew = await rootBundle.loadString("assets/calendar/ReadingMatthew.json");
-    gospelLuke = await rootBundle.loadString("assets/calendar/ReadingLuke.json");
-    readingsLent = await rootBundle.loadString("assets/calendar/ReadingLent.json");
+    apostle =
+        await rootBundle.loadString("assets/calendar/ReadingApostle.json");
+    readingsJohn =
+        await rootBundle.loadString("assets/calendar/ReadingJohn.json");
+    gospelMatthew =
+        await rootBundle.loadString("assets/calendar/ReadingMatthew.json");
+    gospelLuke =
+        await rootBundle.loadString("assets/calendar/ReadingLuke.json");
+    readingsLent =
+        await rootBundle.loadString("assets/calendar/ReadingLent.json");
 
-    OldTestamentItems = await rootBundle.loadString("assets/bible/OldTestamentItems.json");
-    OldTestamentFilenames = await rootBundle.loadString("assets/bible/OldTestamentFilenames.json");
-    NewTestamentItems = await rootBundle.loadString("assets/bible/NewTestamentItems.json");
-    NewTestamentFilenames = await rootBundle.loadString("assets/bible/NewTestamentFilenames.json");
+    OldTestamentItems =
+        await rootBundle.loadString("assets/bible/OldTestamentItems.json");
+    OldTestamentFilenames =
+        await rootBundle.loadString("assets/bible/OldTestamentFilenames.json");
+    NewTestamentItems =
+        await rootBundle.loadString("assets/bible/NewTestamentItems.json");
+    NewTestamentFilenames =
+        await rootBundle.loadString("assets/bible/NewTestamentFilenames.json");
 
-    bibleTrans['ru'] = Map<String, String>.from(
-        jsonDecode(await rootBundle.loadString("assets/translations/ru-RU/reading.json")));
-    bibleTrans['en'] = Map<String, String>.from(
-        jsonDecode(await rootBundle.loadString("assets/translations/en-US/reading.json")));
+    bibleTrans['ru'] = Map<String, String>.from(jsonDecode(
+        await rootBundle.loadString("assets/translations/ru-RU/reading.json")));
+    bibleTrans['en'] = Map<String, String>.from(jsonDecode(
+        await rootBundle.loadString("assets/translations/en-US/reading.json")));
 
-    fastingComments['ru'] = Map<String, String>.from(
-        jsonDecode(await rootBundle.loadString("assets/translations/ru-RU/fasting.json")));
-    fastingComments['en'] = Map<String, String>.from(
-        jsonDecode(await rootBundle.loadString("assets/translations/en-US/fasting.json")));
+    fastingComments['ru'] = Map<String, String>.from(jsonDecode(
+        await rootBundle.loadString("assets/translations/ru-RU/fasting.json")));
+    fastingComments['en'] = Map<String, String>.from(jsonDecode(
+        await rootBundle.loadString("assets/translations/en-US/fasting.json")));
   }
 }
