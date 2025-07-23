@@ -16,12 +16,14 @@ import 'config_param.dart';
 import 'church_fasting.dart';
 import 'church_page.dart';
 
-const appLang = 'ru';
-const appCountry = 'RU';
+//const appLang = 'ru';
+//const appCountry = 'RU';
 
 //const appLang = 'en';
-//const appCountry = 'US';
+//const appCountry = 'EN';
 
+const appLang = 'zh';
+const appCountry = 'HK';
 
 class MyHttpOverrides extends HttpOverrides {
   @override

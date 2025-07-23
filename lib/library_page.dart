@@ -27,20 +27,22 @@ class LibraryPageState extends State<LibraryPage> {
 
     sections.add("Bible");
     books.add([
-      OldTestamentModel(context.languageCode),
-      NewTestamentModel(context.languageCode),
+      OldTestamentModel(context.countryCode),
+      NewTestamentModel(context.countryCode),
     ]);
 
-    sections.add("prayerbook");
-    books.add([
-      EbookModel("prayerbook_${context.languageCode}.sqlite"),
-    ]);
+    if (context.languageCode != "zh") {
+      sections.add("prayerbook");
+      books.add([
+        EbookModel("prayerbook_${context.languageCode}.sqlite"),
+      ]);
 
-    sections.add("liturgical_books");
-    books.add([
-      EbookModel("vigil_${context.languageCode}.sqlite"),
-      EbookModel("liturgy_${context.languageCode}.sqlite"),
-    ]);
+      sections.add("liturgical_books");
+      books.add([
+        EbookModel("vigil_${context.languageCode}.sqlite"),
+        EbookModel("liturgy_${context.languageCode}.sqlite"),
+      ]);
+    }
 
     if (context.languageCode == "ru") {
       sections.add("Разное");

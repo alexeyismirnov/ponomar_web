@@ -28,8 +28,8 @@ class _PericopeViewState extends State<PericopeView> {
     super.didChangeDependencies();
 
     // Initialize the future only once
-    _pericopeFuture ??= PericopeModel(context.languageCode, widget.str)
-        .getPericope(PericopeFormat.widget);
+    _pericopeFuture ??=
+        PericopeModel(context.countryCode, widget.str).getPericope(PericopeFormat.widget);
   }
 
   @override
@@ -56,21 +56,15 @@ class _PericopeViewState extends State<PericopeView> {
                         child: RichText(
                       text: TextSpan(
                           text: "$title\n",
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyLarge!
-                              .copyWith(
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: family,
-                                  fontSize: fontSize)),
+                          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                              fontWeight: FontWeight.bold, fontFamily: family, fontSize: fontSize)),
                       textAlign: TextAlign.center,
                     ))
                   ]));
 
               var bu = values[1] as BibleUtil;
               content.add(CopyToClipboard(bu.getText(),
-                  child: RichText(
-                      text: TextSpan(children: bu.getTextSpan(context)))));
+                  child: RichText(text: TextSpan(children: bu.getTextSpan(context)))));
             }
 
             return Column(
@@ -102,8 +96,7 @@ class _ReadingViewState extends State<ReadingView> {
     super.didChangeDependencies();
 
     currentReading = widget.r.split("#");
-    title =
-        JSON.translateReading(currentReading[0], lang: context.languageCode);
+    title = JSON.translateReading(currentReading[0], lang: context.countryCode);
     subtitle = currentReading.length > 1 ? currentReading[1].trim().tr() : null;
   }
 

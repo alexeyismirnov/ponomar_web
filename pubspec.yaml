@@ -48,4 +48,5 @@ flutter:
     - assets/icons/
     - assets/calendar/
     - assets/translations/ru-RU/
-    - assets/translations/en-US/
+    - assets/translations/en-EN/
+    - assets/translations/zh-HK/

@@ -22,7 +22,7 @@ class TaushevView extends StatelessWidget {
 
     for (final i in getRange(0, p.length, 2)) {
       if (["John", "Luke", "Mark", "Matthew"].contains(p[i])) {
-        final id = JSON.translateReading("${p[i]} ${p[i + 1]}", lang: context.languageCode);
+        final id = JSON.translateReading("${p[i]} ${p[i + 1]}", lang: context.countryCode);
 
         final payload = jsonEncode(<String, dynamic>{
           'id': id,

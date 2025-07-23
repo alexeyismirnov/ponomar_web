@@ -182,7 +182,7 @@ class _DayViewState extends State<DayView> {
                 style: Theme.of(context).textTheme.titleMedium)
           ];
 
-          String? comment = JSON.fastingComments[context.languageCode]![fasting.description];
+          String? comment = JSON.fastingComments[context.countryCode]![fasting.description];
 
           if (comment != null) {
             spans.add(const WidgetSpan(
@@ -258,7 +258,7 @@ class _DayViewState extends State<DayView> {
       });
 
   Future<List<Saint>> fetchSaints(DateTime d) async {
-    final url = "https://$hostURL/saints/${context.languageCode}/${d.day}/${d.month}/${d.year}";
+    final url = "https://$hostURL/saints/${context.countryCode}/${d.day}/${d.month}/${d.year}";
 
     try {
       final r = await http.get(Uri.parse(url));
@@ -283,8 +283,10 @@ class _DayViewState extends State<DayView> {
       content.add(ReadingView(r));
     }
 
-    content.add(FeofanView(date));
-    content.add(SaintsLivesView(date));
+    if (context.languageCode != "zh") {
+      content.add(FeofanView(date));
+      content.add(SaintsLivesView(date));
+    }
 
     if (context.languageCode == "ru") {
       if (date.weekday == DateTime.sunday) {
@@ -300,8 +302,10 @@ class _DayViewState extends State<DayView> {
       }
     }
 
-    content.add(const SizedBox(height: 5));
-    content.add(TroparionWidget(date));
+    if (context.languageCode != "zh") {
+      content.add(const SizedBox(height: 5));
+      content.add(TroparionWidget(date));
+    }
 
     return CardWithTitle(
         title: "Reading of the day",
