@@ -32,8 +32,7 @@ class _BibleChapterViewState extends State<BibleChapterView> {
   void initState() {
     super.initState();
     title = pos.model!.getTitle(pos);
-    _cacheKey =
-        "${pos.model!.code}_${pos.index?.section}_${pos.index?.index}_${pos.chapter}";
+    _cacheKey = "${pos.model!.code}_${pos.index?.section}_${pos.index?.index}_${pos.chapter}";
 
     // Check if content is already in cache
     if (_contentCache.containsKey(_cacheKey)) {

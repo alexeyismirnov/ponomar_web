@@ -25,6 +25,7 @@ import 'troparion_model.dart';
 import 'taushev.dart';
 import 'zerna.dart';
 import 'saints_lives.dart';
+import 'clipboard.dart';
 
 class _FeastWidget extends StatelessWidget {
   final ChurchDay d;
@@ -317,13 +318,15 @@ class _DayViewState extends State<DayView> {
         if (snapshot.hasData) {
           return CardWithTitle(
               title: "Memory of saints",
-              content: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: List<Saint>.from(snapshot.data!)
-                      .map((s) => _FeastWidget(ChurchDay.fromSaint(s),
-                          style: Theme.of(context).textTheme.titleMedium, translate: false))
-                      .toList()));
+              content: CopyToClipboard(
+                  List<Saint>.from(snapshot.data!).map((s) => s.name).join("\n"),
+                  child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: List<Saint>.from(snapshot.data!)
+                          .map((s) => _FeastWidget(ChurchDay.fromSaint(s),
+                              style: Theme.of(context).textTheme.titleMedium, translate: false))
+                          .toList())));
         } else {
           return Container();
         }

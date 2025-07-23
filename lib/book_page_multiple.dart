@@ -138,14 +138,11 @@ class _BookPageMultipleState extends State<BookPageMultiple> {
           },
           itemBuilder: (context, index) {
             // Only build pages that are visible or adjacent
-            if (index == currentIndex ||
-                index == currentIndex - 1 ||
-                index == currentIndex + 1) {
+            if (index == currentIndex || index == currentIndex - 1 || index == currentIndex + 1) {
               return _buildPageContent(index);
             } else {
               // Return a placeholder for non-visible pages
-              return Container(
-                  color: Theme.of(context).scaffoldBackgroundColor);
+              return Container(color: Theme.of(context).scaffoldBackgroundColor);
             }
           },
         ),
@@ -156,8 +153,7 @@ class _BookPageMultipleState extends State<BookPageMultiple> {
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: DotsIndicator(
               dotsCount: dotsCount,
-              position:
-                  min(dotsCount - 1, max(0, getDotsPosition(currentIndex))),
+              position: min(dotsCount - 1, max(0, getDotsPosition(currentIndex))),
               decorator: const DotsDecorator(
                 color: Colors.grey, // Inactive color
                 activeColor: Colors.grey,
