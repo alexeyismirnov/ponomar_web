@@ -85,7 +85,7 @@ class DayView extends StatefulWidget {
   _DayViewState createState() => _DayViewState();
 }
 
-class _DayViewState extends State<DayView> {
+class _DayViewState extends State<DayView> with AutomaticKeepAliveClientMixin {
   DateTime get date => widget.date;
   DateTime get dateOld => widget.dateOld;
 
@@ -93,15 +93,27 @@ class _DayViewState extends State<DayView> {
 
   late List<SaintIcon> icons = [];
   late int pageSize;
-  final _controller = PageController(initialPage: 0);
+  late PageController _controller;
+  final ScrollController _scrollController = ScrollController();
 
   final space10 = const SizedBox(height: 10);
   final space5 = const SizedBox(height: 5);
 
   @override
+  bool get wantKeepAlive => true;
+
+  @override
   void initState() {
     super.initState();
     cal = Cal.fromDate(date);
+    _controller = PageController(initialPage: 0);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    _scrollController.dispose();
+    super.dispose();
   }
 
   @override
@@ -338,29 +350,32 @@ class _DayViewState extends State<DayView> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context); // Required for AutomaticKeepAliveClientMixin
+
     return SingleChildScrollView(
+        controller: _scrollController,
         child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-          CardWithTitle(
-              title: "",
-              content: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    getDate(),
-                    space10,
-                    getDescription(),
-                    space10,
-                    getFasting(),
-                    space10,
-                    getIcons()
-                  ])),
-          space10,
-          getReading(),
-          space10,
-          getSaints()
-        ]));
+              CardWithTitle(
+                  title: "",
+                  content: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        getDate(),
+                        space10,
+                        getDescription(),
+                        space10,
+                        getFasting(),
+                        space10,
+                        getIcons()
+                      ])),
+              space10,
+              getReading(),
+              space10,
+              getSaints()
+            ]));
   }
 }

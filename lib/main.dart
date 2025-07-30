@@ -19,11 +19,11 @@ import 'church_page.dart';
 //const appLang = 'ru';
 //const appCountry = 'RU';
 
-//const appLang = 'en';
-//const appCountry = 'EN';
+const appLang = 'en';
+const appCountry = 'EN';
 
-const appLang = 'zh';
-const appCountry = 'HK';
+//const appLang = 'zh';
+//const appCountry = 'HK';
 
 class MyHttpOverrides extends HttpOverrides {
   @override
