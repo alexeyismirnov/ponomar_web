@@ -1638,13 +1638,6 @@
    "reading" : "church-new-year"
 },
 {
-  "date" : "13 September",
-  "feastName" : "",
-  "feastType" : "none",
-  "saint": "Cyprian of Carthage",
-   "reading" : "cyprian-of-carthage"
-},
-{
   "date" : "29 August",
   "feastName" : "",
   "feastType" : "none",
@@ -2303,7 +2296,7 @@
     "reading": "icon-of-the-mother-of-god-consolation"
   },
   {
-    "date": "24 February",
+    "date": "24 January",
     "feastName": "",
     "feastType": "none",
     "saint": "Theodosius the Great",

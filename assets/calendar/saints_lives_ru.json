@@ -2254,7 +2254,7 @@
     "reading": "ikona-bozhei-materi-otrada-i-uteshenie"
   },
   {
-    "date": "24 February",
+    "date": "24 January",
     "feastName": "",
     "feastType": "none",
     "saint": "Феодосий Великий",
@@ -2322,5 +2322,523 @@
     "feastType" : "none",
     "saint": "Праведный Иосиф",
     "reading" : "pravednyi-iosif"
+  },
+  {
+    "date": "1 October",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Евмений Гортинский",
+    "reading": "evmenii-gortinskii"
+  },
+  {
+    "date": "1 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Новый год",
+    "reading": "novyi-god"
+  },
+  {
+    "date": "1 November",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Мученик Уар",
+    "reading": "muchenik-uar"
+  },
+  {
+    "date": "1 September",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Мученик Андрей Стратилат",
+    "reading": "muchenik-andrei-stratilat"
+  },
+  {
+    "date": "2 October",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Святые Афанасий Тюремщик и Зосима Отшельник",
+    "reading": "svyatye-afanasii-tyuremshik-i-zosima-otshelnik"
+  },
+  {
+    "date": "4 October",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Святой Димитрий Ростовский",
+    "reading": "svyatoi-dimitrii-rostovskii"
+  },
+  {
+    "date": "2 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Великомученица Анастасия",
+    "reading": "velikomuchenica-anastasiya"
+  },
+  {
+    "date": "4 February",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Мученик Анастасий Персидский",
+    "reading": "muchenik-anastasii-persidskii"
+  },
+  {
+    "date": "4 September",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Святые Афанасий и Анфиса",
+    "reading": "svyatye-afanasii-i-anfisa"
+  },
+  {
+    "date": "3 September",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Васса Эдесская",
+    "reading": "vassa-edesskaya"
+  },
+  {
+    "date": "6 October",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Зачатие Иоанна Крестителя",
+    "reading": "zachatie-ioanna-krestitelya"
+  },
+  {
+    "date": "6 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Навечерие Рождества Христова",
+    "reading": "navecherie-rozhdestva-khristova"
+  },
+  {
+    "date": "6 August",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Мученица Христина",
+    "reading": "muchenica-khristina"
+  },
+  {
+    "date": "5 August",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Аполлинарий Равеннский",
+    "reading": "apollinarii-ravennskii"
+  },
+  {
+    "date": "5 September",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Патриарх Калинник",
+    "reading": "patriarkh-kalinnik"
+  },
+  {
+    "date": "6 September",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Святой Косма Этолийский",
+    "reading": "svyatoi-kosma-etoliiskii"
+  },
+  {
+    "date": "6 September",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Аристоклий Московский",
+    "reading": "aristoklii-moskovskii"
+  },
+  {
+    "date": "8 October",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Преставление Преподобного Сергия",
+    "reading": "prestavlenie-prepodobnogo-sergiya"
+  },
+  {
+    "date": "7 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Рождество Христово",
+    "reading": "rozhdestvo-khristovo"
+  },
+  {
+    "date": "8 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Собор Пресвятой Богородицы",
+    "reading": "sobor-presvyatoi-bogorodicy"
+  },
+  {
+    "date": "8 February",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Cимеон Ветхий",
+    "reading": "cimeon-vetkhii"
+  },
+  {
+    "date": "8 September",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Адриан и Наталия",
+    "reading": "adrian-i-nataliya"
+  },
+  {
+    "date": "7 September",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Патриарх Мина Константинопольский",
+    "reading": "patriarkh-mina-konstantinopolskii"
+  },
+  {
+    "date": "10 October",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Мученик Каллистрат Карфагенский",
+    "reading": "muchenik-kallistrat-karfagenskii"
+  },
+  {
+    "date": "11 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Преподобный Марк Гробокопатель",
+    "reading": "prepodobnyi-mark-grobokopatel"
+  },
+  {
+    "date": "10 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "20 000 Мучеников Никомидийских",
+    "reading": "20-000-muchenikov-nikomidiiskikh"
+  },
+  {
+    "date": "9 February",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Перенесение Мощей Иоанна Златоуста",
+    "reading": "perenesenie-moshei-ioanna-zlatousta"
+  },
+  {
+    "date": "10 August",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Питирим Тамбовский",
+    "reading": "pitirim-tambovskii"
+  },
+  {
+    "date": "9 September",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Святой Папа Либерий",
+    "reading": "svyatoi-papa-liberii"
+  },
+  {
+    "date": "9 September",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Пимен Великий",
+    "reading": "pimen-velikii"
+  },
+  {
+    "date": "28 August",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Исторический День Памяти Святого Августина",
+    "reading": "istoricheskii-den-pamyati-svyatogo-avgustina"
+  },
+  {
+    "date": "11 August",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Серафима Римская",
+    "reading": "serafima-rimskaya"
+  },
+  {
+    "date": "15 October",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Андрей Христа Ради Юродивый",
+    "reading": "andrei-khrista-radi-yurodivyi"
+  },
+  {
+    "date": "15 October",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Святые Киприан и Иустина",
+    "reading": "svyatye-kiprian-i-iustina"
+  },
+  {
+    "date": "15 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Сильвестр Римский",
+    "reading": "silvestr-rimskii"
+  },
+  {
+    "date": "12 July",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Паисий Афонский",
+    "reading": "paisii-afonskii"
+  },
+  {
+    "date": "16 September",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Мученица Василиса Никомидийская",
+    "reading": "muchenica-vasilisa-nikomidiiskaya"
+  },
+  {
+    "date": "12 September",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Перенесение Мощей Святого Александра Невского",
+    "reading": "perenesenie-moshei-svyatogo-aleksandra-nevskogo"
+  },
+  {
+    "date": "13 August",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Святитель Герман Осерский",
+    "reading": "svyatitel-german-oserskii"
+  },
+  {
+    "date": "12 August",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Иоанн Воин",
+    "reading": "ioann-voin"
+  },
+  {
+    "date": "17 October",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Павел Препростый",
+    "reading": "pavel-preprostyi"
+  },
+  {
+    "date": "20 October",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Мученики Сергий и Вакх",
+    "reading": "mucheniki-sergii-i-vakkh"
+  },
+  {
+    "date": "17 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Собор Семидесяти Апостолов",
+    "reading": "sobor-semidesyati-apostolov"
+  },
+  {
+    "date": "20 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Собор Иоанна Предтечи",
+    "reading": "sobor-ioanna-predtechi"
+  },
+  {
+    "date": "20 February",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Преподобный Лука Элладский",
+    "reading": "prepodobnyi-luka-elladskii"
+  },
+  {
+    "date": "19 September",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Михаилово Чудо",
+    "reading": "mikhailovo-chudo"
+  },
+  {
+    "date": "19 September",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Чудо Архангела Михаила",
+    "reading": "chudo-arkhangela-mikhaila"
+  },
+  {
+    "date": "17 August",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Семь Спящих Отроков Эфесских",
+    "reading": "sem-spyashikh-otrokov-efesskikh-1"
+  },
+  {
+    "date": "17 August",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Мученик Елевферий Константинопольский",
+    "reading": "muchenik-elevferii-konstantinopolskii"
+  },
+  {
+    "date": "23 October",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Святой Амвросий Оптинский",
+    "reading": "svyatoi-amvrosii-optinskii"
+  },
+  {
+    "date": "21 October",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Святая Пелагия Дева",
+    "reading": "svyataya-pelagiya-deva"
+  },
+  {
+    "date": "22 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Пророк Божий Самей",
+    "reading": "prorok-bozhii-samei"
+  },
+  {
+    "date": "23 August",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Святой Лаврентий",
+    "reading": "svyatoi-lavrentii"
+  },
+  {
+    "date": "22 August",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Собор Соловецких Святых",
+    "reading": "sobor-soloveckikh-svyatykh"
+  },
+  {
+    "date": "23 September",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Святая Пульхерия",
+    "reading": "svyataya-pulkheriya"
+  },
+  {
+    "date": "22 September",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Память Отцов Третьего Вселенского Собора",
+    "reading": "pamyat-otcov-tretego-vselenskogo-sobora"
+  },
+  {
+    "date": "22 October",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Отцы Седьмого Вселенского Собора",
+    "reading": "otcy-sedmogo-vselenskogo-sobora"
+  },
+  {
+    "date": "25 October",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Мартин Турский",
+    "reading": "martin-turskii"
+  },
+  {
+    "date": "27 October",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Мученики Протасий и Гервасий",
+    "reading": "mucheniki-protasii-i-gervasii"
+  },
+  {
+    "date": "24 October",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Апостол Филипп Диакон",
+    "reading": "apostol-filipp-diakon"
+  },
+  {
+    "date": "25 September",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Феодор Александрийский",
+    "reading": "feodor-aleksandriiskii"
+  },
+  {
+    "date": "24 September",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Мученица Ия Персидская",
+    "reading": "muchenica-iya-persidskaya"
+  },
+  {
+    "date": "27 August",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Маркел Апамейский",
+    "reading": "markel-apameiskii"
+  },
+  {
+    "date": "30 September",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Иоаким Александрийский",
+    "reading": "ioakim-aleksandriiskii"
+  },
+  {
+    "date": "3 October",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Благоверный Князь Олег Брянский",
+    "reading": "blagovernyi-knyaz-oleg-bryanskii"
+  },
+  {
+    "date": "29 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Вериги Апостола Петра",
+    "reading": "verigi-apostola-petra"
+  },
+  {
+    "date": "31 October",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Евангелист Лука",
+    "reading": "evangelist-luka"
+  },
+  {
+    "date": "30 October",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Мученик Андрей Критский",
+    "reading": "muchenik-andrei-kritskii"
+  },
+  {
+    "date": "29 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Гонорат Арльский",
+    "reading": "gonorat-arlskii"
+  },
+  {
+    "date": "16 September",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Людмила Чешская",
+    "reading": "lyudmila-cheshskaya"
+  },
+  {
+    "date": "29 September",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Святой Фотий Киевский",
+    "reading": "svyatoi-fotii-kievskii"
+  },
+  {
+    "date": "28 August",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Основание Псково-печерского Монастыря",
+    "reading": "osnovanie-pskovo-pecherskogo-monastyrya"
+  },
+  {
+    "date": "30 August",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Мученик Патрокл Труасский",
+    "reading": "muchenik-patrokl-truasskii"
+  },
+  {
+    "date": "30 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Антоний Великий",
+    "reading": "antonii-velikii"
   }
 ]
