@@ -2840,5 +2840,145 @@
     "feastType": "none",
     "saint": "Антоний Великий",
     "reading": "antonii-velikii"
+  },
+  {
+    "date": "12 February",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Собор Трех Святителей Василия Великого, Григория Богослова и Иоанна Златоуста",
+    "reading": "sobor-trekh-svyatitelei-vasiliya-velikogo-grigoriya-bogoslova-i-ioanna-zlatousta"
+  },
+  {
+    "date": "1 December",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Роман Кесарийский, Диакон и Мученик",
+    "reading": "roman-kesariiskii-diakon-i-muchenik"
+  },
+  {
+    "date": "10 July",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Праведный Север Пресвитер",
+    "reading": "pravednyi-sever-presviter"
+  },
+  {
+    "date": "9 July",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Давид Солунский",
+    "reading": "david-solunskii"
+  },
+  {
+    "date": "8 July",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Небесная Покровительница Святой Княгини Февронии Муромской",
+    "reading": "nebesnaya-pokrovitelnica-svyatoi-knyagini-fevronii-muromskoi"
+  },
+  {
+    "date": "8 July",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Святая Феврония Низибийская",
+    "reading": "svyataya-fevroniya-nizibiiskaya"
+  },
+  {
+    "date": "4 July",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Святой Терентий Иконийский",
+    "reading": "svyatoi-terentii-ikoniiskii"
+  },
+  {
+    "date": "18 September",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Мученица Ираида Александрийская",
+    "reading": "muchenica-iraida-aleksandriiskaya"
+  },
+  {
+    "date": "20 July",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Преподобный Фома Малеин",
+    "reading": "prepodobnyi-foma-malein"
+  },
+  {
+    "date": "19 July",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Собор Радонежских Святых",
+    "reading": "sobor-radonezhskikh-svyatykh"
+  },
+  {
+    "date": "17 July",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Андрей Критский",
+    "reading": "andrei-kritskii"
+  },
+  {
+    "date": "16 July",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Иакинф Римский",
+    "reading": "iakinf-rimskii"
+  },
+  {
+    "date": "15 July",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Святой Фотий и Князь Владимир",
+    "reading": "svyatoi-fotii-i-knyaz-vladimir"
+  },
+  {
+    "date": "15 July",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Святой Фотий Митрополит",
+    "reading": "svyatoi-fotii-mitropolit"
+  },
+  {
+    "date": "5 December",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Мученик Прокопий Чтец",
+    "reading": "muchenik-prokopii-chtec"
+  },
+  {
+    "date": "29 May",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Александр Иерусалимский",
+    "reading": "aleksandr-ierusalimskii"
+  },
+  {
+    "date": "31 July",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Иакинф Амастридский",
+    "reading": "iakinf-amastridskii"
+  },
+  {
+    "date": "30 July",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Лазарь Галисийский",
+    "reading": "lazar-galisiiskii"
+  },
+  {
+    "date": "28 July",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Равноапостольный Владимир",
+    "reading": "ravnoapostolnyi-vladimir"
+  },
+  {
+    "date": "21 July",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Казанская Икона и Святой Прокопий Устюжский",
+    "reading": "kazanskaya-ikona-i-svyatoi-prokopii-ustyuzhskii"
   }
 ]
