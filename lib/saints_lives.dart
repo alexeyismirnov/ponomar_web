@@ -51,9 +51,7 @@ class SaintsCalendar {
     final pascha = Cal.paschaDay(year);
     final pentecost = pascha + 49.days;
     final greatLentStart = pascha - 48.days;
-    final isLeapYear = Cal.isLeap(year: year);
 
-    day("findingOfHead").date = isLeapYear ? DateTime.utc(year, 3, 8) : DateTime.utc(year, 3, 9);
     day("holyFathersSixCouncils").date = Cal.nearestSunday(DateTime.utc(year, 7, 29));
     day("holyFathersSeventhCouncil").date = Cal.nearestSunday(DateTime.utc(year, 10, 24));
 
