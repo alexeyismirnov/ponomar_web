@@ -1008,13 +1008,6 @@
   "reading": "vtoroi-vselenskii-sobor"
 },
 {
-  "date" : "4 March",
-  "feastName" : "",
-  "feastType" : "none",
-  "saint": "Агафон Римский",
-  "reading": "agafon-rimskii"
-},
-{
   "date" : "6 July",
   "feastName" : "",
   "feastType" : "none",
@@ -2366,7 +2359,7 @@
     "reading": "svyatoi-dimitrii-rostovskii"
   },
   {
-    "date": "2 January",
+    "date": "4 January",
     "feastName": "",
     "feastType": "none",
     "saint": "Великомученица Анастасия",
@@ -3283,7 +3276,7 @@
     "reading": "prokopii-dekapolit"
   },
   {
-    "date": "4 April",
+    "date": "4 March",
     "feastName": "",
     "feastType": "none",
     "saint": "Досифей Газский",
