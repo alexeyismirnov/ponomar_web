@@ -2527,7 +2527,7 @@
     "reading": "pimen-velikii"
   },
   {
-    "date": "28 August",
+    "date": "10 September",
     "feastName": "",
     "feastType": "none",
     "saint": "Исторический День Памяти Святого Августина",
@@ -3337,5 +3337,33 @@
     "feastType": "none",
     "saint": "Святитель Агафон Чудотворец",
     "reading": "svyatitel-agafon-chudotvorec"
+  },
+  {
+    "date": "6 March",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Евстафий Антиохийский",
+    "reading": "evstafii-antiokhiiskii"
+  },
+  {
+    "date": "13 April",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Ипатий Гангрский",
+    "reading": "ipatii-gangrskii"
+  },
+  {
+    "date": "14 April",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Мария Египетская",
+    "reading": "mariya-egipetskaya"
+  },
+  {
+    "date": "13 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Отдание Рождества",
+    "reading": "otdanie-rozhdestva"
   }
 ]

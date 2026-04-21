@@ -242,7 +242,7 @@
   "feastName" : "sunday5GreatLent",
   "feastType" : "none",
   "saint": "Mary of Egypt",
-   "reading" : "mary-of-egypt"
+   "reading" : "mary-of-egypt-1"
 },
 {
   "date" : "26 September",
@@ -1132,13 +1132,6 @@
   "feastType" : "none",
   "saint": "Adrian of Ondrusov",
    "reading" : "adrian-of-ondrusov"
-},
-{
-  "date" : "5 March",
-  "feastName" : "",
-  "feastType" : "none",
-  "saint": "Agaphon of Rome",
-   "reading" : "agaphon-of-rome"
 },
 {
   "date" : "6 July",
@@ -2646,7 +2639,7 @@
     "reading": "translation-of-the-relicis-saint-alexander-nevsky"
   },
   {
-    "date": "28 August",
+    "date": "10 September",
     "feastName": "",
     "feastType": "none",
     "saint": "Historic day of Commemoration of Saint Augustine",
@@ -3463,5 +3456,34 @@
     "feastType": "none",
     "saint": "Saint Agathon the Wonderworker",
     "reading": "saint-agathon-the-wonderworker"
+  },
+  {
+    "date": "6 March",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Eustathius of Antioch",
+    "reading": "eustathius-of-antioch"
+  },
+  {
+    "date": "14 April",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Mary of Egypt",
+    "reading": "mary-of-egypt"
+  },
+  {
+    "date": "13 April",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Saint Hypatius of Gangra",
+    "reading": "saint-hypatius-of-gangra"
+  },
+  {
+    "date": "13 January",
+    "feastName": "",
+    "feastType": "none",
+    "saint": "Leavetaking of the Feast of the Nativity",
+    "reading": "leavetaking-of-the-feast-of-the-nativity"
   }
+
 ]
